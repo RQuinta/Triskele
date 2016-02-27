@@ -11,9 +11,11 @@ class Service < ActiveRecord::Base
 
   scope :by_name, -> (busca) { where("name LIKE '#{busca}%'").limit(6) } 
   scope :by_city, -> (city) { where(city_id: city) }
-  scope :by_professional, -> (professional) { where(city_id: professional) }
+  scope :by_professional, -> (professional) { where(professional_id: professional) }
   scope :by_state, -> (state) { where(state_id: state) }
- 
+
+  scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
+  
   validates :name, presence: true
 
   delegate :state, :state_id, to: :city
