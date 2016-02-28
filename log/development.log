@@ -15258,3 +15258,677 @@ Started GET "/api/services.json" for 127.0.0.1 at 2016-02-10 13:33:28 -0200
 Processing by Api::ServicesController#index as JSON
   [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services"[0m
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:10 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=p" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"p"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'p%') LIMIT 10
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=p" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"p"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'p%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=pa" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"pa"}
+  [1m[35mSport Load (0.3ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'pa%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=pa" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"pa"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'pa%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'par%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'par%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=para" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"para"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'para%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=para" for 127.0.0.1 at 2016-02-27 18:09:12 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"para"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'para%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:13 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'par%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:13 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'par%') LIMIT 10[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=para" for 127.0.0.1 at 2016-02-27 18:09:13 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"para"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'para%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=para" for 127.0.0.1 at 2016-02-27 18:09:13 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"para"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'para%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:14 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[35mSport Load (0.3ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'par%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=par" for 127.0.0.1 at 2016-02-27 18:09:14 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"par"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'par%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=pa" for 127.0.0.1 at 2016-02-27 18:09:14 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"pa"}
+  [1m[35mSport Load (0.3ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'pa%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=pa" for 127.0.0.1 at 2016-02-27 18:09:14 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"pa"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'pa%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=p" for 127.0.0.1 at 2016-02-27 18:09:15 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"p"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'p%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=p" for 127.0.0.1 at 2016-02-27 18:09:15 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"p"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'p%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:15 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.4ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:15 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:09:17 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:09:17 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:09:17 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:09:17 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:20 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:09:20 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:10:53 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:10:53 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:11:01 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:11:01 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:11:05 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:11:07 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:11:07 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:16:07 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:16:07 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:37 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:37 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:20:38 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:20:38 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:20:38 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:20:38 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:40 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:40 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:20:43 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:44 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:20:44 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:25:59 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:25:59 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:25:59 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 18:25:59 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:26:00 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 18:26:00 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:26:00 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-02-27 18:26:00 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:26:01 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:26:01 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 18:39:24 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 18:39:24 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 19:07:15 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 19:07:15 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-02-27 19:07:16 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 19:07:17 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 19:07:17 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 19:08:43 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 19:08:43 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 19:09:29 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 19:09:29 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-27 19:09:30 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-27 19:09:30 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-02-27 19:09:30 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mSport Load (0.4ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-02-27 19:09:30 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-27 19:09:31 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-27 19:09:31 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-28 15:31:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 14ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-28 15:31:30 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-02-28 15:31:31 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-02-28 15:31:31 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-02-28 15:31:32 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-02-28 15:31:32 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
