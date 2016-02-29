@@ -15,6 +15,8 @@ class Service < ActiveRecord::Base
   scope :by_state, -> (state) { where(state_id: state) }
 
   scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
+
+  scope :with_city, -> { includes(:city) }
   
   validates :name, presence: true
 

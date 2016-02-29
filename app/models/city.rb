@@ -1,6 +1,6 @@
 class City < ActiveRecord::Base
   
-  has_many   :services, dependent: :restrict_with_error
+  has_many :services, dependent: :restrict_with_error
   
   belongs_to :state
 

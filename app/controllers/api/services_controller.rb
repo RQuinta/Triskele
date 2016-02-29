@@ -5,6 +5,7 @@ class Api::ServicesController < ApplicationController
   has_scope :by_sport
   has_scope :by_professional
   has_scope :by_city
+  has_scope :with_city, type: :boolean
 
   def index
     respond_with apply_scopes(Service).all

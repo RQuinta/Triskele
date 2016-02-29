@@ -5,6 +5,7 @@ ruby '2.3.0'
 gem 'rails', '4.2.3'
 gem 'rails_12factor', group: :production
 gem 'responders'
+gem 'pry-byebug'
 gem 'has_scope'
 gem 'rails-observers'
 gem 'delayed_job_active_record'
