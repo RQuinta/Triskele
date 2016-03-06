@@ -8,7 +8,12 @@ class Api::ServicesController < ApplicationController
   has_scope :with_city, type: :boolean
 
   def index
-    respond_with apply_scopes(Service).all
+    services = apply_scopes(Service).all
+    respond_to do |format|
+      format.json do
+        render :json => services.to_json(:include => [:city, :additionals, :service_pictures] )
+      end
+    end
   end
 
   def create

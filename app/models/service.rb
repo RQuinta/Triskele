@@ -5,6 +5,7 @@ class Service < ActiveRecord::Base
   has_and_belongs_to_many :sports
   has_many :service_pictures
   has_many :appointments
+  has_many :additionals
   has_many :users, through: :appointments
   has_many :acquisitions
   has_many :users, through: :acquisitions
