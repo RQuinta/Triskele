@@ -11,7 +11,7 @@ class Api::ServicesController < ApplicationController
     services = apply_scopes(Service).all
     respond_to do |format|
       format.json do
-        render :json => services.to_json(:include => [:city, :additionals, :service_pictures] )
+        render :json => services.to_json(:include => [:city] )
       end
     end
   end
@@ -22,7 +22,12 @@ class Api::ServicesController < ApplicationController
   end
 
   def show
-    respond_with :api, @service
+    respond_to do |format|
+      format.json do
+        render :json => @service.to_json(:include => [:city, :additionals, :service_pictures] )
+      end
+    end
+
   end
 
   def update

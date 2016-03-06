@@ -7698,3 +7698,112 @@ Processing by Api::ServicesController#index as JSON
   [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals"  WHERE "additionals"."service_id" = ?  [["service_id", 3]]
   [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures"  WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
 Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-03-06 02:02:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.5ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 36ms (Views: 10.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-03-06 02:02:27 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.8ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-03-06 02:02:28 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.3ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-03-06 02:02:28 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 02:02:28 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.6ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 3]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 3]]
+Completed 200 OK in 128ms (Views: 0.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-03-06 02:02:29 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-03-06 02:02:29 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/services.json?by_city=1&with_city=true" for 127.0.0.1 at 2016-03-06 02:02:29 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_city"=>"1", "with_city"=>"true"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1)
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 3]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 3]]
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 02:02:29 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.6ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 02:02:30 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 3]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 3]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:04:41 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:06:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mService Load (0.3ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 4.5ms)
