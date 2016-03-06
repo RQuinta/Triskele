@@ -7807,3 +7807,938 @@ Processing by Api::ServicesController#show as JSON
   [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
   [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
 Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:10:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mService Load (0.4ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:10:54 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mService Load (0.2ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:12:38 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mService Load (0.1ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.4ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services/3.json" for 127.0.0.1 at 2016-03-06 02:13:45 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mService Load (0.1ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 3]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 3]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 14:56:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/services/2.json" for 127.0.0.1 at 2016-03-06 14:56:14 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:48:24 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (1.5ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 34ms (Views: 14.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:48:30 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:48:34 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:48:41 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:48:44 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:49:30 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:59:47 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (1.5ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:59:52 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 15:59:55 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:07:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:07:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:07:34 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:09:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:13:54 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:14:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:15:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:15:10 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.5ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:15:13 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:15:40 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:15:49 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:16:29 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.8ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:16:37 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:16:46 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:17:54 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:18:28 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:18:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:18:50 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:20:02 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 16:51:58 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/services/2.json" for 127.0.0.1 at 2016-03-06 16:52:02 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mService Load (0.1ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 16:58:53 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-06 17:24:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/services/2.json" for 127.0.0.1 at 2016-03-06 17:24:28 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.3ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+Completed 200 OK in 43ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:03 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 33ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:39 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:42 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:44 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:46 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:29:57 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:30:06 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:30:23 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:36:59 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:37:15 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:38:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:38:52 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:40:04 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:40:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:40:55 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:45:14 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.5ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:45:19 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:45:22 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:45:29 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:47:50 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:47:52 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:47:53 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:48:08 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:51:22 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:51:22 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:51:27 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:51:27 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:51:35 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:51:35 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:51:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:51:38 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:52:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:52:01 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (2.4ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:52:08 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:52:08 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:52:47 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:52:47 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:54:35 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.4ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:54:35 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:54:38 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:54:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:54:56 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:54:56 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:54:58 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:54:58 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 17:56:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 17:56:31 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:16:28 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:16:28 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:16:35 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:16:35 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:16:51 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:16:51 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:17:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:17:00 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:17:15 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:17:15 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:18:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:18:00 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:18:14 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:18:14 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:19:10 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:19:10 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:19:12 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:19:12 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:19:19 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:19:19 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:19:21 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:19:21 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:22:07 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:22:07 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:22:49 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:22:49 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:22:54 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:22:54 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:22:57 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:22:57 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:23:06 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:23:06 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:23:40 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:23:40 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:23:52 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:23:52 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:23:56 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:23:56 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:24:06 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:24:06 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:24:33 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:24:33 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:24:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:24:38 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:24:57 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:24:57 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:25:02 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.8ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:25:02 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:25:13 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:25:13 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:34:55 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:34:55 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:35:39 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:35:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:35:41 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:35:41 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-06 18:36:21 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-06 18:36:21 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAnotherFieldsToService (20160306213922)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "services" ADD "short_description" text[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "services" ADD "how_to_get" text
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "services" ADD "phisycal_effort" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "services" ADD "place" text
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160306213922"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+
