@@ -17,7 +17,18 @@ class Api::ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.create service_params
+    service_params[:aproved] = false
+    if service_params[:max_clients] > 1
+      service_params[:collective] = true  
+    else
+      service_params[:collective] = false
+    end 
+    if service_params[:daytime].present? 
+      service_params[:event] = true  
+    else
+      service_params[:event] = false
+    end
+    @service = Service.create service_params 
     respond_with :api, @service
   end
 
@@ -43,7 +54,9 @@ class Api::ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit([:name])
+    params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
+      :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
+      :restrictions, :short_description, :longitude, :latitude, :city_id, :professional_id, sport_ids: [] ])
   end
 
   def set_service
