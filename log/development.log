@@ -9809,3 +9809,1507 @@ Migrating to AddMapDataOnServices (20160307021117)
             FROM sqlite_temp_master
             WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
 
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:29:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.7ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 145ms (Views: 0.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/services/2.json" for 127.0.0.1 at 2016-03-07 14:29:38 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-03-07 14:30:09 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 31ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-03-07 14:30:09 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-03-07 14:30:21 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-03-07 14:30:21 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-03-07 14:30:21 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-03-07 14:30:21 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-03-07 14:30:22 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-03-07 14:30:22 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:30:24 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:30:24 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:32:21 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.4ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:32:59 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:59:26 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (3.2ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 14:59:41 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 15:00:09 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 15:05:23 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.7ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 15:08:18 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.5ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.8ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 15:10:14 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:12:45 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:12:45 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:23:30 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (2.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:23:30 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:23:35 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:23:35 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:23:44 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:23:44 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:26:25 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (5.1ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 10ms (Views: 2.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:26:25 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:26:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:26:38 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:29:37 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:29:37 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:30:19 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:30:19 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:37:22 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:37:22 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:37:34 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:37:34 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:37:44 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:37:44 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:38:17 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:38:17 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:38:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:38:43 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:39:46 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:39:46 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:41:50 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:41:50 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:44:08 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:44:08 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.6ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:46:44 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (8.6ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 16ms (Views: 4.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:46:44 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:47:05 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:47:05 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:50:12 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.9ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:50:12 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:50:24 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:50:24 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:51:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (3.4ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:51:01 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 15:51:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 15:51:31 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:22:27 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.9ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:22:27 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:22:48 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:22:48 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:23:53 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:23:54 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:24:16 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:24:16 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:25:39 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:25:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:25:43 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:25:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:26:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:26:00 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:26:31 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:26:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:26:36 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:26:36 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:27:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:27:01 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:27:33 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:27:33 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:27:53 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:27:53 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:27:57 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:27:57 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:28:10 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:28:10 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:29:00 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:29:00 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:34:31 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:34:31 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:35:41 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:35:41 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:35:59 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:35:59 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:36:40 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:36:40 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:36:58 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:36:58 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (1.1ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:37:03 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:37:03 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:37:34 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:37:34 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.7ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:37:41 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:37:41 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:38:10 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:38:10 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:38:47 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:38:47 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:38:56 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:38:56 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:39:20 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:39:20 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:39:39 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:39:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:39:46 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:39:46 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:40:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:40:01 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:40:13 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:40:13 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:40:26 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:40:26 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:40:54 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.4ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:40:54 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:42:38 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:42:38 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:42:46 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:42:46 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 16:43:37 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 16:43:37 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 17:10:10 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (2.0ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 17:10:32 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/services/9.json" for 127.0.0.1 at 2016-03-07 17:18:50 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAdditional Load (1.8ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 9]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 9]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-03-07 17:22:36 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-03-07 17:22:36 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-03-07 17:34:07 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-03-07 17:34:07 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-07 20:13:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/services/11.json" for 127.0.0.1 at 2016-03-07 20:13:39 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 11]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 11]]
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-07 20:14:07 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 31ms (Views: 9.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-07 20:14:07 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795097415-7" for 127.0.0.1 at 2016-03-12 12:04:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.2ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795103414-8" for 127.0.0.1 at 2016-03-12 12:05:03 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795109415-9" for 127.0.0.1 at 2016-03-12 12:05:09 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.8ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795115414-10" for 127.0.0.1 at 2016-03-12 12:05:15 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.6ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795121414-11" for 127.0.0.1 at 2016-03-12 12:05:21 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.4ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795126781-12" for 127.0.0.1 at 2016-03-12 12:05:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.7ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795131852-13" for 127.0.0.1 at 2016-03-12 12:05:31 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.4ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795136926-14" for 127.0.0.1 at 2016-03-12 12:05:36 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795141994-15" for 127.0.0.1 at 2016-03-12 12:05:42 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.3ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795147060-16" for 127.0.0.1 at 2016-03-12 12:05:47 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.8ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795152127-17" for 127.0.0.1 at 2016-03-12 12:05:52 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795157192-18" for 127.0.0.1 at 2016-03-12 12:05:57 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.1ms)
+
+
+Started GET "/browser-sync/socket.io/?EIO=3&transport=polling&t=1457795162265-19" for 127.0.0.1 at 2016-03-12 12:06:02 -0300
+
+ActionController::RoutingError (No route matches [GET] "/browser-sync/socket.io"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-12 12:06:02 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-12 12:07:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 34ms (Views: 9.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-12 12:07:28 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-03-12 12:09:15 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 71ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-03-12 12:17:16 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-03-12 12:17:16 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAAdrenalineToService (20160312154600)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "services" ADD "adrenaline" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160312154600"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+[0m
