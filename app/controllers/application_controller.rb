@@ -1,14 +1,27 @@
 class ApplicationController < ActionController::Base
-	
+  
+  include ActionController::HttpAuthentication::Token	
   respond_to :json
 
-  # def actual_client
-  #   User.find :client_id if session.has_key? :client_id && actual_client_type == User
-  #   Professional.find session[:client_id] if session.has_key? :client_id && actual_client_type == Professional
-  # end
+  protect_from_forgery with: :null_session
 
-  # def actual_client_type
-  #   session[:user_type] if session.has_key? :user_type
-  # end
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  	
+  def current_user
+  	User.by_token(session[:token]).first if session.has_key? :token
+    Professional.by_token(session[:token]).first if session.has_key? :token
+  end
+
+  protected
+  
+  def authenticate
+    unless authenticate_with_http_token { |token, options| User.find_by(token: token) }
+    	render json: { error: 'Bad Token'}, status: 401
+  	end
+  end
   
 end

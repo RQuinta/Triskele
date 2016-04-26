@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312154600) do
+ActiveRecord::Schema.define(version: 20160426013748) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160312154600) do
     t.string  "email"
     t.string  "phone"
     t.boolean "aproved"
+    t.string  "token"
+    t.string  "password_digest"
   end
 
   create_table "service_pictures", force: :cascade do |t|
@@ -139,6 +141,8 @@ ActiveRecord::Schema.define(version: 20160312154600) do
     t.string  "phone"
     t.boolean "cpf"
     t.boolean "passport"
+    t.string  "token"
+    t.string  "password_digest"
   end
 
 end

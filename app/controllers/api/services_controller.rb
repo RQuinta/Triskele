@@ -1,5 +1,6 @@
 class Api::ServicesController < ApplicationController
 
+  before_filter :authenticate, only: [:create, :update, :destroy]
   before_action :set_service , only:[:show, :update, :destroy]
 
   has_scope :by_sport

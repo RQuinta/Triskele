@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :enterprises, except: [:new, :edit]
     resources :states, except: [:new, :edit]
     resources :countries, except: [:new, :edit]
-    
+    resources :sessions, except: [:index, :update, :new, :show, :edit]
   end
 
 end
