@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.3'
+gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'responders'
 gem 'pry-byebug'
