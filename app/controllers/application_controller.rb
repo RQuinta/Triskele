@@ -15,8 +15,6 @@ class ApplicationController < ActionController::Base
   	User.by_token(session[:token]).first if session.has_key? :token
     Professional.by_token(session[:token]).first if session.has_key? :token
   end
-
-  protected
   
   def authenticate
     unless authenticate_with_http_token { |token, options| User.find_by(token: token) }
