@@ -36,7 +36,7 @@ class Api::ServicesController < ApplicationController
   def show
     respond_to do |format|
       format.json do
-        render :json => @service.to_json(:include => [:city, :additionals, :service_pictures] )
+        render :json => @service.to_json(:include => [:city, :sports, :additionals, :service_pictures] )
       end
     end
 
