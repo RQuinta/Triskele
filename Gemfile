@@ -8,6 +8,8 @@ gem 'responders'
 gem 'pry-byebug'
 gem 'has_scope'
 gem 'rails-observers'
+gem 'has_secure_token'
+gem 'bcrypt', '~> 3.1.7'
 gem 'delayed_job_active_record'
 gem 'rack-cors', :require => 'rack/cors'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
