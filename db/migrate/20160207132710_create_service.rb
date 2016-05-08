@@ -8,6 +8,7 @@ class CreateService < ActiveRecord::Migration
       t.boolean :collective
       t.integer :rating
       t.integer :city_id 
+      t.string  :image
     end
   end
 end

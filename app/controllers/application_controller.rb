@@ -17,7 +17,10 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate
-    unless authenticate_with_http_token { |token, options| User.find_by(token: token) }
+    binding.pry
+    unless authenticate_with_http_token { |token, options| 
+      puts token
+      User.find_by(token: token) }
     	render json: { error: 'Bad Token'}, status: 401
   	end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426013748) do
+ActiveRecord::Schema.define(version: 20160508034511) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20160426013748) do
     t.string   "longitude"
     t.string   "latitude"
     t.integer  "adrenaline"
+    t.string   "image"
   end
 
   create_table "services_sports", id: false, force: :cascade do |t|

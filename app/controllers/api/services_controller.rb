@@ -43,6 +43,16 @@ class Api::ServicesController < ApplicationController
   end
 
   def update
+    if service_params[:max_clients] > 1
+      service_params[:collective] = true  
+    else
+      service_params[:collective] = false
+    end 
+    if service_params[:daytime].present? 
+      service_params[:event] = true  
+    else
+      service_params[:event] = false
+    end
     @service.update service_params
     respond_with :api, @service
   end
