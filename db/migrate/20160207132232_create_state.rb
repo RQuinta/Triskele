@@ -4,6 +4,7 @@ class CreateState < ActiveRecord::Migration
       t.string  :name
       t.string  :acronym
       t.integer :country_id
+      t.boolean :active
     end
   end
 end

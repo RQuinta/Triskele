@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
   before_action :set_user , only:[:update, :destroy]
 
   def create
-    binding.pry
     @user = User.create user_params
     respond_with :api, @user
   end

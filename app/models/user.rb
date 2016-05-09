@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	has_many :services, through: :acquisitions
 	has_many :appointments
 	has_many :services, through: :appointments
+	has_one :professional
 
 	scope :by_token, -> (token) { where(token: token) }
 	scope :by_email, -> (email) { where(email: email) }

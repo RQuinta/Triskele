@@ -3,10 +3,9 @@ class CreateUser < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :doc_ident
-      t.string :phone
-      t.boolean :cpf
-      t.boolean :passport
+      t.string :password_digest
+      t.string :token
+      t.string :image
     end
   end
 end

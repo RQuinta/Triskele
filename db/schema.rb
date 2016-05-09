@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508034511) do
+ActiveRecord::Schema.define(version: 20160209004514) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -29,19 +29,21 @@ ActiveRecord::Schema.define(version: 20160508034511) do
   create_table "appointments", force: :cascade do |t|
     t.integer  "service_id"
     t.integer  "user_id"
-    t.string   "doubt_answer"
-    t.string   "doubt"
+    t.text     "doubt_answer"
+    t.text     "doubt"
     t.datetime "daytime"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string  "name"
     t.integer "state_id"
+    t.boolean "active"
   end
 
   create_table "countries", force: :cascade do |t|
-    t.string "name"
-    t.string "acronym"
+    t.string  "name"
+    t.string  "acronym"
+    t.boolean "active"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -60,27 +62,18 @@ ActiveRecord::Schema.define(version: 20160508034511) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
-  create_table "professional_statuses", force: :cascade do |t|
-    t.string "description"
-  end
-
   create_table "professionals", force: :cascade do |t|
-    t.string  "name"
+    t.integer "user_id"
+    t.string  "phone"
     t.string  "doc_ident"
     t.boolean "cpf"
     t.boolean "passport"
-    t.integer "professional_status_id"
-    t.string  "email"
-    t.string  "phone"
-    t.boolean "aproved"
-    t.string  "token"
-    t.string  "password_digest"
+    t.boolean "active"
   end
 
   create_table "service_pictures", force: :cascade do |t|
-    t.string  "link"
+    t.string  "public_id"
     t.string  "description"
-    t.boolean "master"
     t.integer "service_id"
   end
 
@@ -91,25 +84,25 @@ ActiveRecord::Schema.define(version: 20160508034511) do
     t.integer  "max_clients"
     t.boolean  "collective"
     t.integer  "rating"
-    t.datetime "daytime"
-    t.boolean  "event"
-    t.integer  "professional_id"
     t.integer  "city_id"
+    t.string   "image"
+    t.integer  "adrenaline"
+    t.text     "short_description"
+    t.text     "how_to_get"
+    t.text     "place"
     t.text     "description"
     t.text     "duration"
     t.text     "included"
     t.text     "not_included"
     t.text     "restrictions"
     t.text     "bring"
-    t.boolean  "aproved"
-    t.text     "short_description"
-    t.text     "how_to_get"
     t.integer  "physical_effort"
-    t.text     "place"
+    t.boolean  "aproved"
+    t.integer  "professional_id"
     t.string   "longitude"
     t.string   "latitude"
-    t.integer  "adrenaline"
-    t.string   "image"
+    t.datetime "daytime"
+    t.boolean  "event"
   end
 
   create_table "services_sports", id: false, force: :cascade do |t|
@@ -126,24 +119,21 @@ ActiveRecord::Schema.define(version: 20160508034511) do
     t.boolean "air"
     t.boolean "land"
     t.boolean "need_documentation"
-    t.integer "rating"
   end
 
   create_table "states", force: :cascade do |t|
     t.string  "name"
     t.string  "acronym"
     t.integer "country_id"
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "doc_ident"
-    t.string  "phone"
-    t.boolean "cpf"
-    t.boolean "passport"
-    t.string  "token"
-    t.string  "password_digest"
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "token"
+    t.string "image"
   end
 
 end

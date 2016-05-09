@@ -4,8 +4,7 @@ class ServicePicture < ActiveRecord::Base
   
   scope :by_service, -> (service) { where(service_id: service) }
   
-  validates :link, presence: true
-  validates :master, presence: true, inclusion: { in: [true, false] }, exclusion: { in: [nil] }
+  validates :public_id, presence: true
   validates :service_id, presence: true
 
 end

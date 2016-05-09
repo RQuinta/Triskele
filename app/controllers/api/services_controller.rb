@@ -12,7 +12,7 @@ class Api::ServicesController < ApplicationController
     services = apply_scopes(Service).all
     respond_to do |format|
       format.json do
-        render :json => services.to_json(:include => [:city] )
+        render :json => services.to_json(:include => [:city, :service_pictures] )
       end
     end
   end
@@ -29,6 +29,7 @@ class Api::ServicesController < ApplicationController
     else
       service_params[:event] = false
     end
+    binding.pry
     @service = Service.create service_params 
     respond_with :api, @service
   end
@@ -39,7 +40,6 @@ class Api::ServicesController < ApplicationController
         render :json => @service.to_json(:include => [:city, :sports, :additionals, :service_pictures] )
       end
     end
-
   end
 
   def update
@@ -67,7 +67,8 @@ class Api::ServicesController < ApplicationController
   def service_params
     params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
       :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
-      :restrictions, :short_description, :longitude, :latitude, :city_id, :professional_id, sport_ids: [] ])
+      :adrenaline, :image, :restrictions, :short_description, :longitude,
+      :latitude, :city_id, :professional_id, sport_ids: [], service_pictures: [] ])
   end
 
   def set_service

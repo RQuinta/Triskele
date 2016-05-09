@@ -6,7 +6,6 @@ class CreateSport < ActiveRecord::Migration
       t.boolean :air
       t.boolean :land
       t.boolean :need_documentation
-      t.integer :rating
     end
   end
 end

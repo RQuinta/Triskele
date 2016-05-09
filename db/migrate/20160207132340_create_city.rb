@@ -3,6 +3,7 @@ class CreateCity < ActiveRecord::Migration
     create_table :cities do |t|
       t.string  :name
       t.integer :state_id
+      t.boolean :active
     end
   end
 end
