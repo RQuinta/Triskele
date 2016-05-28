@@ -4984,3 +4984,1889 @@ Processing by Api::ServicesController#index as JSON
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
   [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
 Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-09 00:19:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-09 00:19:39 -0300
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  [1m[36mCity Load (5.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 42ms (Views: 11.6ms | ActiveRecord: 1.0ms)
+  [1m[35mServicePicture Load (1.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 150ms (Views: 0.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-09 00:19:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-09 00:20:39 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.3ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 138ms (Views: 0.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-09 00:20:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-09 00:20:39 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-09 00:21:11 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-09 00:21:11 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-09 00:21:11 -0300
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-09 00:21:50 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services"
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-09 00:21:50 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-09 00:21:50 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:03:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 125ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/sessions.json" for 127.0.0.1 at 2016-05-11 23:03:45 -0300
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"session"=>{"email"=>"rqs111193@gmail.com", "social_login"=>true}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "rqs111193@gmail.com"]]
+  [1m[35mProfessional Load (0.2ms)[0m  SELECT  "professionals".* FROM "professionals" WHERE "professionals"."user_id" = ? LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:03:46 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mSport Load (7.6ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 90ms (Views: 52.6ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+
+
+Started GET "/api/sports.json?by_name=rr" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rr"}
+  [1m[35mSport Load (0.5ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'rr%') LIMIT 10
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/cities.json?by_name=rr" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rr"}
+  [1m[36mCity Load (0.8ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'rr%') LIMIT 10[0m
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+  [1m[35mSport Load (0.7ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 61ms (Views: 10.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-05-11 23:04:26 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.7ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 24ms (Views: 10.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-05-11 23:04:27 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[35mSport Load (0.7ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-05-11 23:04:27 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"r"}
+  [1m[36mCity Load (0.8ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10[0m
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:04:28 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (1.0ms)[0m  SELECT "services".* FROM "services"
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-05-11 23:04:28 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[35mCity Load (1.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.4ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 176ms (Views: 0.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-05-11 23:04:28 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_city=1&with_city=true" for 127.0.0.1 at 2016-05-11 23:04:29 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_city"=>"1", "with_city"=>"true"}
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services" WHERE "services"."city_id" = ?  [["city_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mServicePicture Load (0.5ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-11 23:04:29 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-11 23:04:29 -0300
+Processing by Api::SportsController#index as JSON
+Completed 200 OK in 47ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+
+
+Started GET "/api/services.json?by_city=1&with_city=true" for 127.0.0.1 at 2016-05-11 23:04:29 -0300
+Processing by Api::ServicesController#index as JSON
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+  Parameters: {"by_city"=>"1", "with_city"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."city_id" = ?  [["city_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1)[0m
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mServicePicture Load (0.4ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:04:57 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:06:46 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-11 23:06:58 -0300
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-11 23:06:58 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (5.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mSport Load (6.8ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 12ms (Views: 3.7ms | ActiveRecord: 6.8ms)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-11 23:10:19 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Hugo Arenari", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"1", "restrictions"=>"1", "brings"=>"1", "place"=>"1", "how_to_get"=>"1", "short_description"=>"1", "description"=>"1", "included"=>"1", "not_included"=>"1", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"f0m1uqpk8yipy7b6r4ol"}, {"public_id"=>"abzpmflfwe4cctnmmvs1"}, {"public_id"=>"xgsdixcvvgzmcwsclq90"}, {"public_id"=>"jjdn2tjrj9smqfjef46v"}], "image"=>"eaqcy95u4tojybe7kbzu"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (16.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-11 23:10:26 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Hugo Arenari", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"1", "restrictions"=>"1", "brings"=>"1", "place"=>"1", "how_to_get"=>"1", "short_description"=>"1", "description"=>"1", "included"=>"1", "not_included"=>"1", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"axuml8xmmrflllrx6krv"}, {"public_id"=>"vah0imhmwuxtujkbbqah"}, {"public_id"=>"fcyh7oxofmhpf5b7fso0"}, {"public_id"=>"dh5hcr2wsmojg33tpydx"}], "image"=>"eyfnlzbw5hatioolrnzp"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:11:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.7ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (1.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 183ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:11:20 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:12:18 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (1.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-11 23:12:27 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (10.9ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 11.3ms)
+
+
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-27 16:13:03 -0300
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-27 16:13:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.5ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 41ms (Views: 10.5ms | ActiveRecord: 1.3ms)
+Completed 200 OK in 45ms (Views: 13.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:13:12 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (1.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.3ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 82ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-05-27 16:13:15 -0300
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-05-27 16:13:15 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>""}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json?by_name=r" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+Processing by Api::SportsController#index as JSON
+
+  Parameters: {"by_name"=>"r"}
+
+Started GET "/api/cities.json?by_name=r" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'r%') LIMIT 10[0m
+  Parameters: {"by_name"=>"r"}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'r%') LIMIT 10
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json?by_name=ri" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+
+
+Started GET "/api/cities.json?by_name=ri" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"ri"}
+  [1m[35mCity Load (0.9ms)[0m  SELECT  "cities".* FROM "cities" WHERE (name LIKE 'ri%') LIMIT 10
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.9ms)
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE (name LIKE 'ri%') LIMIT 10[0m
+Completed 200 OK in 21ms (Views: 1.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/sports.json?by_name=rio" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+Processing by Api::SportsController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE (name LIKE 'rio%') LIMIT 10
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/cities.json?by_name=rio" for 127.0.0.1 at 2016-05-27 16:13:18 -0300
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>"rio"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE (name LIKE 'rio%') LIMIT 10[0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sports.json?by_name=" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+
+
+Started GET "/api/cities.json?by_name=" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"by_name"=>""}
+  Parameters: {"by_name"=>""}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/services.json?by_city=1&with_city=true" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_city"=>"1", "with_city"=>"true"}
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35mService Load (0.6ms)[0m  SELECT "services".* FROM "services" WHERE "services"."city_id" = ?  [["city_id", 1]]
+  [1m[36mCity Load (0.9ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1)[0m
+  [1m[35mServicePicture Load (1.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mServicePicture Load (0.4ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 194ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/services.json?by_city=1&with_city=true" for 127.0.0.1 at 2016-05-27 16:13:20 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_city"=>"1", "with_city"=>"true"}
+  [1m[35mService Load (0.7ms)[0m  SELECT "services".* FROM "services" WHERE "services"."city_id" = ?  [["city_id", 1]]
+  [1m[36mCity Load (0.9ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1)[0m
+  [1m[35mServicePicture Load (0.7ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mServicePicture Load (0.6ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 41ms (Views: 1.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-27 16:13:21 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.9ms)[0m  SELECT "cities".* FROM "cities"
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-27 16:13:21 -0300
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.9ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:13:21 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services/5.json" for 127.0.0.1 at 2016-05-27 16:13:31 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mService Load (0.6ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 5]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 5]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 58ms (Views: 0.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/services/5.json" for 127.0.0.1 at 2016-05-27 16:13:32 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 5]]
+  [1m[35mAdditional Load (0.6ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 5]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:14:01 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:14:02 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-27 16:37:31 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (2.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (1.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (1.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-27 16:37:40 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-27 16:37:40 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.6ms)
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:39:25 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"cimyhtjsrwpqnmfwqpd3"}, {"public_id"=>"fzmdurzdraoxehvrmoad"}, {"public_id"=>"qwrpblszyerroqoadvvl"}], "image"=>"uikc3ysncwab3mypt0e6"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Completed 500 Internal Server Error in 56351ms (ActiveRecord: 0.5ms)
+
+ActionView::MissingTemplate (Missing template api/services/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+):
+  actionview (4.2.3) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.3) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.3) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.3) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.3) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.3) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.3) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.3) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/raphael/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.3) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.3) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:115:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:503:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (167.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (45.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (253.3ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:42:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"et3zmdhr9r6iipdbl9eg"}, {"public_id"=>"vg1iuopsmka2lugawmiz"}, {"public_id"=>"kcfyuj0vwboshdidfonm"}], "image"=>"e7wjweo6ej6c9uzhqokw"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:44:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"qjllureccrsmppkmmuli"}, {"public_id"=>"itn2ip3uxjdrlntgntv0"}, {"public_id"=>"ia7xsdnj8tibmwmovv4i"}], "image"=>"jf4kpmpxez62pak9q9hd"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:50:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"ikabpkodgrwn9xlulyzu"}, {"public_id"=>"wtswfarp3iti6nmbyhf4"}, {"public_id"=>"xlvdn7vyekxmw4ikpnud"}], "image"=>"sjuvzyyqyds8mjsatzho"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 47178ms (ActiveRecord: 6.9ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#70350262709240) expected, got ActionController::Parameters(#25995240)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:51:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"pblzfo3os3p89jl8trmr"}, {"public_id"=>"b5ptyzgm0xal6agxcdww"}, {"public_id"=>"qujsrxdn2uzrx0lq25yw"}], "image"=>"ijkerrzcujphj2wyfmxl"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 16:52:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"so7qn0hirnf3denujsk8"}, {"public_id"=>"dcu3xwgqerpdwisaqyhc"}, {"public_id"=>"u988ihkauhakuls4qlq7"}], "image"=>"d4ilu2v5am9kigfyf1sp"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 17:22:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"wlxgdtme69yafr6x1sdn"}, {"public_id"=>"elh4ffbqadokaact6snl"}, {"public_id"=>"dlqovjehrzricdcyhbci"}], "image"=>"bm0ju9u3yj0dzt2vp31y"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-27 17:23:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"Tfinal", "price"=>122, "duration"=>"1h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sdasda", "restrictions"=>"asdad", "brings"=>"asdadad", "place"=>"ada", "how_to_get"=>"adadad", "short_description"=>"asdadada", "description"=>"adadadad", "included"=>"asdadad", "not_included"=>"asda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"wlxgdtme69yafr6x1sdn"}, {"public_id"=>"elh4ffbqadokaact6snl"}, {"public_id"=>"dlqovjehrzricdcyhbci"}], "image"=>"bm0ju9u3yj0dzt2vp31y"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 14:56:31 -0300
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 14:56:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+Processing by Api::SportsController#index as JSON
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 54ms (Views: 10.5ms | ActiveRecord: 1.1ms)
+Completed 200 OK in 55ms (Views: 17.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 14:58:14 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"l", "price"=>1, "duration"=>"23", "min_clients"=>1, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"vdvdv", "restrictions"=>"adad", "brings"=>"asdas", "place"=>"adasd", "how_to_get"=>"asdad", "short_description"=>"adad", "description"=>"ada", "included"=>"dadad", "not_included"=>"adad", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"pbsdcrtbbf2ojbp2vtil"}, {"public_id"=>"kwdks45fndx7yccdtkyf"}, {"public_id"=>"pbb4tajyif3pby4vvqrz"}], "image"=>"rexnw4bufh9r3wzhmbtq"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 14:59:11 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"l", "price"=>1, "duration"=>"23", "min_clients"=>1, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"vdvdv", "restrictions"=>"adad", "brings"=>"asdas", "place"=>"adasd", "how_to_get"=>"asdad", "short_description"=>"adad", "description"=>"ada", "included"=>"dadad", "not_included"=>"adad", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"pbsdcrtbbf2ojbp2vtil"}, {"public_id"=>"kwdks45fndx7yccdtkyf"}, {"public_id"=>"pbb4tajyif3pby4vvqrz"}], "image"=>"rexnw4bufh9r3wzhmbtq"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 15:04:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (2.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 132ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 15:05:50 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 15:05:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 40ms (Views: 10.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:06:57 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdad", "price"=>111, "duration"=>"a23", "min_clients"=>3, "max_clients"=>3, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"213", "restrictions"=>"123", "brings"=>"123", "place"=>"213", "how_to_get"=>"123", "short_description"=>"WQE", "description"=>"ASD", "included"=>"ASD", "not_included"=>"ASD", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"u0ua5guiyg6ysrvbkckr"}, {"public_id"=>"cqafoa4cdpfqdm7fad6x"}, {"public_id"=>"zokm7adxno0o0l9s1ftm"}, {"public_id"=>"nm04zvsknrvfwacdg7ka"}], "image"=>"epfv57ykgp8lbyh5h78x"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 53907ms (ActiveRecord: 1.6ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#69962068304020) expected, got ActionController::Parameters(#24538100)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:22:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdad", "price"=>111, "duration"=>"a23", "min_clients"=>3, "max_clients"=>3, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"213", "restrictions"=>"123", "brings"=>"123", "place"=>"213", "how_to_get"=>"123", "short_description"=>"WQE", "description"=>"ASD", "included"=>"ASD", "not_included"=>"ASD", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"wmp8bqy8mzrcknk3vcss"}, {"public_id"=>"hyud6ncvo7vgv6yz9qfx"}, {"public_id"=>"wluksvfrwnedbzcaablq"}, {"public_id"=>"cfrrd8v5aihctp2zgwcb"}], "image"=>"zqcu7op9j9dpnsrnu822"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#69902274470380) expected, got ActionController::Parameters(#17937400)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.9ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:24:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdad", "price"=>111, "duration"=>"a23", "min_clients"=>3, "max_clients"=>3, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"213", "restrictions"=>"123", "brings"=>"123", "place"=>"213", "how_to_get"=>"123", "short_description"=>"WQE", "description"=>"ASD", "included"=>"ASD", "not_included"=>"ASD", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"uhawqpmecmaefknz7rrx"}, {"public_id"=>"m0mahhk8pmyh6wwenuff"}, {"public_id"=>"vuc8umbufgtfehwp5cga"}, {"public_id"=>"ohklhvqzrqxcfqzit1pc"}], "image"=>"pmz3byffml2dc1rgbejq"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 36419ms (ActiveRecord: 1.3ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#30570220) expected, got ActionController::Parameters(#20260840)):
+  app/controllers/api/services_controller.rb:34:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:28:55 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdad", "price"=>111, "duration"=>"a23", "min_clients"=>3, "max_clients"=>3, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"213", "restrictions"=>"123", "brings"=>"123", "place"=>"213", "how_to_get"=>"123", "short_description"=>"WQE", "description"=>"ASD", "included"=>"ASD", "not_included"=>"ASD", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"udcid6b88wo0qi0ksn8s"}, {"public_id"=>"ugys2ylyabnmscdxdobp"}, {"public_id"=>"rydjxx8bvuktmhwrok2b"}, {"public_id"=>"cmwi1vwgoe4qcnyvqa1g"}], "image"=>"nqbgfcvwwscro2dryidl"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 58182ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#30570220) expected, got ActionController::Parameters(#20260840)):
+  app/controllers/api/services_controller.rb:34:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 15:35:56 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 26ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 15:35:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.5ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 30ms (Views: 7.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 15:35:58 -0300
+Processing by Api::SportsController#index as JSON
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 15:35:58 -0300
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Processing by Api::CitiesController#index as JSON
+Completed 200 OK in 17ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:47:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"raphael", "price"=>123, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asda", "restrictions"=>"asda", "brings"=>"ada", "place"=>"asda", "how_to_get"=>"ad", "short_description"=>"adad", "description"=>"asdda", "included"=>"adada", "not_included"=>"adada", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"yba85gxnuxgbvkabzldm"}, {"public_id"=>"fuuondbx9ihd5hc5pna1"}, {"public_id"=>"t9ce1nwxszlpwqizsofa"}, {"public_id"=>"o90npit0asdlhdqspiz1"}], "image"=>"u1zq8b7awrblmpxg8tjy"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+  [1m[36mSport Load (1.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSport Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "raphael"], ["description", "asdda"], ["duration", "123"], ["how_to_get", "ad"], ["included", "adada"], ["max_clients", 12], ["min_clients", 12], ["not_included", "adada"], ["physical_effort", 3], ["place", "asda"], ["price", 123.0], ["adrenaline", 3], ["image", "u1zq8b7awrblmpxg8tjy"], ["restrictions", "asda"], ["short_description", "adad"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1]]
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)[0m  [["sport_id", 1], ["service_id", 6]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 6]]
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 15:48:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"raphael", "price"=>123, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asda", "restrictions"=>"asda", "brings"=>"ada", "place"=>"asda", "how_to_get"=>"ad", "short_description"=>"adad", "description"=>"asdda", "included"=>"adada", "not_included"=>"adada", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"yba85gxnuxgbvkabzldm"}, {"public_id"=>"fuuondbx9ihd5hc5pna1"}, {"public_id"=>"t9ce1nwxszlpwqizsofa"}, {"public_id"=>"o90npit0asdlhdqspiz1"}], "image"=>"u1zq8b7awrblmpxg8tjy"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "service_pictures" ("service_id", "public_id") VALUES (?, ?)  [["service_id", 1], ["public_id", "awdwdwqdwd"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:44:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"raphael", "price"=>123, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asda", "restrictions"=>"asda", "brings"=>"ada", "place"=>"asda", "how_to_get"=>"ad", "short_description"=>"adad", "description"=>"asdda", "included"=>"adada", "not_included"=>"adada", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"vbbiil5wxb2zlqygmw5l"}, {"public_id"=>"bxfcfyysjkwc7i5phxkk"}, {"public_id"=>"dar4v0cqu6en1ebyonzh"}, {"public_id"=>"coo5ymyx5giw5apbjyma"}], "image"=>"xd2peee4l5oyila8cv7v"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+  [1m[36mSport Load (0.9ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSport Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "raphael"], ["description", "asdda"], ["duration", "123"], ["how_to_get", "ad"], ["included", "adada"], ["max_clients", 12], ["min_clients", 12], ["not_included", "adada"], ["physical_effort", 3], ["place", "asda"], ["price", 123.0], ["adrenaline", 3], ["image", "xd2peee4l5oyila8cv7v"], ["restrictions", "asda"], ["short_description", "adad"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1]]
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)[0m  [["sport_id", 1], ["service_id", 7]]
+  [1m[35m (4.8ms)[0m  commit transaction
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Completed 500 Internal Server Error in 22414ms (ActiveRecord: 15.8ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/api/services_controller.rb:34:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:45:22 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:45:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 20ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:45:26 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:45:26 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.5ms)
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:46:28 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>1, "duration"=>"12g'", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sads", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdasd", "description"=>"asdasd", "included"=>"asdasd", "not_included"=>"asdas", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"lml0ur4uuugwhbcxuzao"}, {"public_id"=>"xc1rcdcrntjqrrlqjx3h"}, {"public_id"=>"nd8azdgles4qe9wtqhao"}, {"public_id"=>"fm8rjbatsbkpaksx8y7a"}], "image"=>"cfxofyizz1x4ok9wpdzs"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 28642ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#70181343320600) expected, got ActionController::Parameters(#24694620)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:47:59 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>1, "duration"=>"12g'", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"sads", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdasd", "description"=>"asdasd", "included"=>"asdasd", "not_included"=>"asdas", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures"=>[{"public_id"=>"tgpe8sp51wxydsa7gcwd"}, {"public_id"=>"lgneeyg5ijtebzc7paon"}, {"public_id"=>"agskne0dzh3tfvpyjc46"}, {"public_id"=>"defmoovj7gedrhitdrzo"}], "image"=>"sqzusq5zxt13rgl2ajjc"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 2.0ms)
+
+ActiveRecord::AssociationTypeMismatch (ServicePicture(#34956760) expected, got ActionController::Parameters(#24694620)):
+  app/controllers/api/services_controller.rb:32:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:48:40 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:48:40 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 19ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.5ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:51:59 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"sdasda", "price"=>123, "duration"=>"132h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"ada", "restrictions"=>"asd", "brings"=>"ad", "place"=>"asdsa", "how_to_get"=>"asd", "short_description"=>"sdadad", "description"=>"adas", "included"=>"asdasd", "not_included"=>"asdas", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"i9mzai6cneumcxjgbbxq"}, {"public_id"=>"jd3fb2lzyuvzyryxtmrr"}, {"public_id"=>"k93vjfmndujo1heoxozg"}, {"public_id"=>"vmshvadb6rhugvw1znk3"}], "image"=>"blszvdu2fmsvunvhsewf"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSport Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "sdasda"], ["description", "adas"], ["duration", "132h"], ["how_to_get", "asd"], ["included", "asdasd"], ["max_clients", 1], ["min_clients", 1], ["not_included", "asdas"], ["physical_effort", 3], ["place", "asdsa"], ["price", 123.0], ["adrenaline", 3], ["image", "blszvdu2fmsvunvhsewf"], ["restrictions", "asd"], ["short_description", "sdadad"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)[0m  [["sport_id", 1], ["service_id", 8]]
+  [1m[35m (4.1ms)[0m  commit transaction
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 8.4ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.0ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:52:02 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"sdasda", "price"=>123, "duration"=>"132h", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"ada", "restrictions"=>"asd", "brings"=>"ad", "place"=>"asdsa", "how_to_get"=>"asd", "short_description"=>"sdadad", "description"=>"adas", "included"=>"asdasd", "not_included"=>"asdas", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"i9mzai6cneumcxjgbbxq"}, {"public_id"=>"jd3fb2lzyuvzyryxtmrr"}, {"public_id"=>"k93vjfmndujo1heoxozg"}, {"public_id"=>"vmshvadb6rhugvw1znk3"}], "image"=>"bxikua6uaqxlcktaflfx"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+  [1m[35mSport Load (0.1ms)[0m  SELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSport Exists (0.2ms)[0m  SELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "sdasda"], ["description", "adas"], ["duration", "132h"], ["how_to_get", "asd"], ["included", "asdasd"], ["max_clients", 1], ["min_clients", 1], ["not_included", "asdas"], ["physical_effort", 3], ["place", "asdsa"], ["price", 123.0], ["adrenaline", 3], ["image", "bxikua6uaqxlcktaflfx"], ["restrictions", "asd"], ["short_description", "sdadad"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)  [["sport_id", 1], ["service_id", 9]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 10.5ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:52:55 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:52:55 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+  [1m[35mCity Load (0.6ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.2ms)
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:54:19 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdad", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adaad", "brings"=>"asdasd", "place"=>"sdasda", "how_to_get"=>"ada", "short_description"=>"asdsad", "description"=>"asdasda", "included"=>"sadasd", "not_included"=>"asdasda", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"jzsluawlkyzyuvs8of3v"}, {"public_id"=>"fhhthhdrrdudjyed8umf"}, {"public_id"=>"v4tr4c848rnc7vthbcqi"}, {"public_id"=>"curctnqyzphoz2c0rogb"}, {"public_id"=>"mf0wk3gbvqbkjdbasd2g"}], "image"=>"uze1mkz2n2qmw2bqaidt"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+Unpermitted parameters: sports, city, required_experience, brings, service_pictures_attributes
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:55:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (1.0ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:55:01 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 16:55:25 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 16:55:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.2ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 37ms (Views: 10.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 16:57:18 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"pjnpeablovtfqjr5no9e"}, {"public_id"=>"vthhepeefh1vjqbxnmso"}, {"public_id"=>"mbeg3ixk1bfqwdzhybpq"}, {"public_id"=>"ldusfymgyh8uyclg93xl"}], "image"=>"p0jqw9kfmaye1ydfzhdx"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[35mSport Load (0.2ms)[0m  SELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSport Exists (0.2ms)[0m  SELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 30152ms (Views: 0.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:00:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"vx4kfpffcjklumocg64e"}, {"public_id"=>"xe3uta9a03uepn5y6vfd"}, {"public_id"=>"kccesns7a1kddos6qesb"}, {"public_id"=>"olpvmm9fs2gklwam1gel"}], "image"=>"wkxfkmuwpnqdiqjeziwm"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSport Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 66685ms (Views: 0.5ms | ActiveRecord: 9.9ms)
+  [1m[36mServicePicture Load (1.7ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures"[0m
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:06:57 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"z5dshiwgs0oiudxx1vxj"}, {"public_id"=>"uw9milfwajxf4npjmmbs"}, {"public_id"=>"ahlqafxzjjebzarz4je6"}, {"public_id"=>"tn2xxmmyu9by10wyqgzs"}], "image"=>"umec1evvpvbzp0fwnb29"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[35mSport Load (0.4ms)[0m  SELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSport Exists (0.5ms)[0m  SELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 63903ms (Views: 3.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:09:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"zrajlljmnudolvhn4yuf"}, {"public_id"=>"fbnbpbifwurfvbrhmcnu"}, {"public_id"=>"f8wfxtekbscm7bzvrfyf"}, {"public_id"=>"omhcgitgrslig3h9u3pe"}], "image"=>"vwvnebzciaxysd8plw2w"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.6ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSport Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:10:51 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"zrajlljmnudolvhn4yuf"}, {"public_id"=>"fbnbpbifwurfvbrhmcnu"}, {"public_id"=>"f8wfxtekbscm7bzvrfyf"}, {"public_id"=>"omhcgitgrslig3h9u3pe"}], "image"=>"vwvnebzciaxysd8plw2w"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:13:45 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"asdasd", "price"=>123, "duration"=>"123", "min_clients"=>123, "max_clients"=>123, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"adsasda", "brings"=>"asdasd", "place"=>"asdas", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdad", "included"=>"asdasda", "not_included"=>"adasd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"t15udvczmyu1fjrloz0m"}, {"public_id"=>"hy4jfvkiq0e9sopvhiuf"}, {"public_id"=>"lgiagcnpczy4baxclngs"}, {"public_id"=>"n0cnfguth0oj7ys92dju"}], "image"=>"ppld8ssf0eq9br8ue0jl"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.8ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSport Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mSport Load (3.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSport Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE "sports"."name" = 'G' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "sports" ("name", "water", "air", "land", "need_documentation") VALUES (?, ?, ?, ?, ?)  [["name", "G"], ["water", "t"], ["air", "f"], ["land", "f"], ["need_documentation", "f"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 17:20:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+Completed 200 OK in 157ms (Views: 0.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 17:21:01 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 23ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 17:21:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (1.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 32ms (Views: 5.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:22:06 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"adada", "price"=>123, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdad", "restrictions"=>"asdasd", "brings"=>"asdad", "place"=>"asda", "how_to_get"=>"asd", "short_description"=>"asda", "description"=>"ads", "included"=>"addaad", "not_included"=>"asdsa", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"v2xecvodlgpqnio3qjhl"}, {"public_id"=>"dyoqyy6ow2natfccmf9i"}, {"public_id"=>"jojxdygdxrmoqkb8olyu"}, {"public_id"=>"cr3lvvyxdcyvqifjadbn"}], "image"=>"ssqqoueplika80k1bqrn"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[35mSport Load (0.7ms)[0m  SELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSport Exists (0.7ms)[0m  SELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:23:22 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"adada", "price"=>123, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdad", "restrictions"=>"asdasd", "brings"=>"asdad", "place"=>"asda", "how_to_get"=>"asd", "short_description"=>"asda", "description"=>"ads", "included"=>"addaad", "not_included"=>"asdsa", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"v2xecvodlgpqnio3qjhl"}, {"public_id"=>"dyoqyy6ow2natfccmf9i"}, {"public_id"=>"jojxdygdxrmoqkb8olyu"}, {"public_id"=>"cr3lvvyxdcyvqifjadbn"}], "image"=>"ssqqoueplika80k1bqrn"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 17:24:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 32ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 17:24:19 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:25:20 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"adsd", "price"=>12, "duration"=>"123", "min_clients"=>12, "max_clients"=>12, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asdasd", "restrictions"=>"asdasd", "brings"=>"asda", "place"=>"asd", "how_to_get"=>"asd", "short_description"=>"asdad", "description"=>"asdaad", "included"=>"asdads", "not_included"=>"ada", "professional_id"=>1, "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"ey2dv210ksyoioikf8yl"}, {"public_id"=>"uuc7ujvxuyn5ixvorchq"}, {"public_id"=>"e71aszlujowf4htcsrjv"}, {"public_id"=>"nydpkq66ghwvyxtw409e"}], "image"=>"yltvlxrl8e0kztxln86e"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 61766ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 17:34:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+Completed 200 OK in 177ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 17:35:23 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 47ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 17:35:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (1.6ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 38ms (Views: 8.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:36:42 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"p", "price"=>2, "duration"=>"2", "min_clients"=>2, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"adad", "restrictions"=>"sadad", "brings"=>"ads", "place"=>"asda", "how_to_get"=>"asda", "short_description"=>"asdasd", "description"=>"asdads", "included"=>"asdasd", "not_included"=>"asdasds", "professional_id"=>1, "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"i071z0n9oyh3litdcaii"}, {"public_id"=>"v7n2crrxorqiyrhfem2n"}, {"public_id"=>"w4gbmhjxiaqcunykzwlb"}, {"public_id"=>"wznbrkzs1aah5jn7o3gm"}], "image"=>"njncfo5hgpnvv6ggql6h"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Completed 500 Internal Server Error in 34113ms (ActiveRecord: 4.2ms)
+
+ActiveRecord::AssociationTypeMismatch (Sport(#69918582922100) expected, got ActionController::Parameters(#25614100)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:39:39 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"p", "price"=>2, "duration"=>"2", "min_clients"=>2, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"adad", "restrictions"=>"sadad", "brings"=>"ads", "place"=>"asda", "how_to_get"=>"asda", "short_description"=>"asdasd", "description"=>"asdads", "included"=>"asdasd", "not_included"=>"asdasds", "professional_id"=>1, "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"tdtmav0rtjyvqouqazu9"}, {"public_id"=>"t5h7zu7jywntufu3w3ue"}, {"public_id"=>"fydessoza30nzvjayrur"}, {"public_id"=>"qhoonm3ga5pcmjcidefp"}], "image"=>"upkqrkkxc7z0g7bytcyh"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: water, air, land, need_documentation, type
+Unpermitted parameters: city, required_experience, brings
+Completed 500 Internal Server Error in 26700ms (ActiveRecord: 1.9ms)
+
+ActiveRecord::AssociationTypeMismatch (Sport(#38640500) expected, got ActionController::Parameters(#25614100)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:42:09 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"p", "price"=>2, "duration"=>"2", "min_clients"=>2, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"adad", "restrictions"=>"sadad", "brings"=>"ads", "place"=>"asda", "how_to_get"=>"asda", "short_description"=>"asdasd", "description"=>"asdads", "included"=>"asdasd", "not_included"=>"asdasds", "professional_id"=>1, "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"gnf64s4rz03umx1asyvc"}, {"public_id"=>"flmbnplaw00te4wfhmi6"}, {"public_id"=>"rglupzsmhaafjsmb4znp"}, {"public_id"=>"sdv3csgxfop6bixoxanj"}], "image"=>"ugqxmqx9b4iu5fybpmbm"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: city, required_experience, brings
+Unpermitted parameters: city, required_experience, brings
+Completed 500 Internal Server Error in 24031ms (ActiveRecord: 5.7ms)
+
+ActiveRecord::AssociationTypeMismatch (Sport(#69918581866960) expected, got ActionController::Parameters(#25614100)):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 17:43:26 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 17:43:26 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Processing by Api::CitiesController#index as JSON
+Completed 200 OK in 21ms (Views: 11.8ms | ActiveRecord: 1.2ms)
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 17:43:33 -0300
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 17:43:33 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+Completed 200 OK in 20ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:45:30 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"r4oqioodi6x53dmqaju2"}, {"public_id"=>"tvnitwizjgjkrficpvtp"}, {"public_id"=>"dbolk5bsvmpof0dpmjve"}, {"public_id"=>"quhwgfrzqysojhgcdsqx"}], "image"=>"alj6unfnyvr0xtu0g4ml"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+Unpermitted parameters: sports, city, required_experience, brings, sport_ids
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 34825ms (Views: 0.7ms | ActiveRecord: 11.2ms)
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT  "services".* FROM "services"  ORDER BY "services"."id" ASC LIMIT 1[0m
+  [1m[35mService Load (0.4ms)[0m  SELECT  "services".* FROM "services"  ORDER BY "services"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT "sports".id FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 4]]
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:47:33 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"yexyzxcdq4yaxfou5wap"}, {"public_id"=>"dmloftsfdx9bknmeruxa"}, {"public_id"=>"hvetob6u0hirs26mle7j"}, {"public_id"=>"veoyue0zsc5gy5j8oi2g"}], "image"=>"wczprq3uy1un6hriprng"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.5ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSport Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'G' AND "sports"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:48:38 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"yexyzxcdq4yaxfou5wap"}, {"public_id"=>"dmloftsfdx9bknmeruxa"}, {"public_id"=>"hvetob6u0hirs26mle7j"}, {"public_id"=>"veoyue0zsc5gy5j8oi2g"}], "image"=>"wczprq3uy1un6hriprng"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:52:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"zz0rikfzqe8yo0fayqau"}, {"public_id"=>"utd7mn5dxxurkehv4iv1"}, {"public_id"=>"n0c8e25m7j0e6vixaljl"}, {"public_id"=>"eg6wa45thedthmfitw1c"}], "image"=>"m53uixq7p9oft3ywq1qc"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSport Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'G' AND "sports"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 17:55:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"r0arrugn4tlqt5y7zjls"}, {"public_id"=>"dx3ncdxfbd6t4fa2lrep"}, {"public_id"=>"qwolm4cfeadbe5w42ufv"}, {"public_id"=>"fwksbtgjerxngcfkazop"}], "image"=>"l28e4ztrxrqsarjhuk9u"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Completed 500 Internal Server Error in 10122ms (ActiveRecord: 2.0ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'service_pictures_attributes' for Service.):
+  app/controllers/api/services_controller.rb:33:in `create'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.7ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 18:06:05 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"xa14cmiminaktsdx6u7j"}, {"public_id"=>"iyrkp8g4pwxniioazchs"}, {"public_id"=>"hv5xelpets3uly1g9ykb"}, {"public_id"=>"m2odxygmd04i1qycbarb"}], "image"=>"exleitxi2ih4kd1yb9il"}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1[0m  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 18:07:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"xa14cmiminaktsdx6u7j"}, {"public_id"=>"iyrkp8g4pwxniioazchs"}, {"public_id"=>"hv5xelpets3uly1g9ykb"}, {"public_id"=>"m2odxygmd04i1qycbarb"}], "image"=>"exleitxi2ih4kd1yb9il"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+Unpermitted parameters: sports, city, required_experience, brings
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 18:13:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>2, "name"=>"G", "water"=>true, "air"=>false, "land"=>false, "need_documentation"=>false, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"c", "price"=>1, "duration"=>"1", "min_clients"=>1, "max_clients"=>1, "physical_effort"=>3, "adrenaline"=>4, "required_experience"=>"sda", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asds", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"sad", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[2], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"ksvxt5xwukrs0e0qdcb0"}, {"public_id"=>"p9cmwasayes8ylb4ms23"}, {"public_id"=>"gpx22fjz5v9f4xzcyecd"}, {"public_id"=>"zyz2anycvqkhfnn2emrr"}], "image"=>"u686rxnlaffvt26lo59r"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSport Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'G' AND "sports"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id", "aproved", "collective", "event") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "c"], ["description", "asd"], ["duration", "1"], ["how_to_get", "asd"], ["included", "sad"], ["max_clients", 1], ["min_clients", 1], ["not_included", "asd"], ["physical_effort", 3], ["place", "asds"], ["price", 1.0], ["adrenaline", 4], ["image", "u686rxnlaffvt26lo59r"], ["restrictions", "asd"], ["short_description", "asd"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1], ["aproved", "f"], ["collective", "f"], ["event", "f"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)[0m  [["sport_id", 2], ["service_id", 10]]
+  [1m[35m (5.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)  [["public_id", "ksvxt5xwukrs0e0qdcb0"], ["service_id", 10]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)[0m  [["public_id", "p9cmwasayes8ylb4ms23"], ["service_id", 10]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)  [["public_id", "gpx22fjz5v9f4xzcyecd"], ["service_id", 10]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)[0m  [["public_id", "zyz2anycvqkhfnn2emrr"], ["service_id", 10]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Completed 201 Created in 24350ms (Views: 8.8ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 18:15:35 -0300
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 18:15:35 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 26ms (Views: 12.5ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 31ms (Views: 7.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/services.json" for 127.0.0.1 at 2016-05-28 18:16:30 -0300
+Processing by Api::ServicesController#create as JSON
+  Parameters: {"service"=>{"sports"=>[{"id"=>1, "name"=>"Trekking", "water"=>false, "air"=>false, "land"=>true, "need_documentation"=>true, "type"=>"Sport"}], "city"=>{"id"=>1, "name"=>"Rio de Janeiro", "state_id"=>1, "active"=>true, "type"=>"City"}, "name"=>"ppp", "price"=>12, "duration"=>"12h", "min_clients"=>1, "max_clients"=>2, "physical_effort"=>3, "adrenaline"=>3, "required_experience"=>"asd", "restrictions"=>"asd", "brings"=>"asd", "place"=>"asd", "how_to_get"=>"asd", "short_description"=>"asd", "description"=>"asd", "included"=>"asd", "not_included"=>"asd", "professional_id"=>1, "sport_ids"=>[1], "city_id"=>1, "latitude"=>-43.1729, "service_pictures_attributes"=>[{"public_id"=>"qxyltsljsnarzevyyiw4"}, {"public_id"=>"h7cj3j1hhagvhmjoc10h"}, {"public_id"=>"gjcdxe7smz4rjoflwtn3"}, {"public_id"=>"rdtjjce5rzimiaipgurd"}], "image"=>"jq3tynytatc344jmescq"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."token" = ? LIMIT 1  [["token", "Tpu6iC72Qd3Bz6P1ZUVWYa1e"]]
+Unpermitted parameters: sports, city, required_experience, brings
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSport Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "sports" WHERE ("sports"."name" = 'Trekking' AND "sports"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "services" ("name", "description", "duration", "how_to_get", "included", "max_clients", "min_clients", "not_included", "physical_effort", "place", "price", "adrenaline", "image", "restrictions", "short_description", "latitude", "city_id", "professional_id", "aproved", "collective", "event") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "ppp"], ["description", "asd"], ["duration", "12h"], ["how_to_get", "asd"], ["included", "asd"], ["max_clients", 2], ["min_clients", 1], ["not_included", "asd"], ["physical_effort", 3], ["place", "asd"], ["price", 12.0], ["adrenaline", 3], ["image", "jq3tynytatc344jmescq"], ["restrictions", "asd"], ["short_description", "asd"], ["latitude", "-43.1729"], ["city_id", 1], ["professional_id", 1], ["aproved", "f"], ["collective", "t"], ["event", "f"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "services_sports" ("sport_id", "service_id") VALUES (?, ?)[0m  [["sport_id", 1], ["service_id", 11]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)  [["public_id", "qxyltsljsnarzevyyiw4"], ["service_id", 11]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)[0m  [["public_id", "h7cj3j1hhagvhmjoc10h"], ["service_id", 11]]
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)  [["public_id", "gjcdxe7smz4rjoflwtn3"], ["service_id", 11]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "service_pictures" ("public_id", "service_id") VALUES (?, ?)[0m  [["public_id", "rdtjjce5rzimiaipgurd"], ["service_id", 11]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 201 Created in 105ms (Views: 1.2ms | ActiveRecord: 31.7ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 18:16:37 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[36mService Load (0.6ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCity Load (0.4ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.5ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 6]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 11]]
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 18:16:39 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 18:16:39 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 18:16:39 -0300
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by Api::SportsController#index as JSON
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 11]]
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+  [1m[35mSport Load (0.4ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/services/7.json" for 127.0.0.1 at 2016-05-28 18:17:03 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mService Load (0.5ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.3ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 7]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 7]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 7]]
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-28 18:17:10 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-28 18:17:10 -0300
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by Api::SportsController#index as JSON
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 11]]
+Completed 200 OK in 29ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-28 18:17:10 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)

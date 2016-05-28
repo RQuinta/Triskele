@@ -10,6 +10,8 @@ class Service < ActiveRecord::Base
   has_many :acquisitions
   has_many :users, through: :acquisitions
 
+  # accepts_nested_attributes_for :service_pictures
+
   scope :by_name, -> (busca) { where("name LIKE '#{busca}%'").limit(6) } 
   scope :by_city, -> (city) { where(city_id: city) }
   scope :by_professional, -> (professional) { where(professional_id: professional) }
