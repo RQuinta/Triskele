@@ -18,19 +18,25 @@ class Api::ServicesController < ApplicationController
   end
 
   def create
-    service_params[:aproved] = false
-    if service_params[:max_clients] > 1
-      service_params[:collective] = true  
+    s_params = service_params
+    s_params[:aproved] = false
+    if s_params[:max_clients] > 1
+      s_params[:collective] = true  
     else
-      service_params[:collective] = false
+      s_params[:collective] = false
     end 
-    if service_params[:daytime].present? 
-      service_params[:event] = true  
+    if s_params[:daytime].present? 
+      s_params[:event] = true  
     else
-      service_params[:event] = false
+      s_params[:event] = false
     end
-    binding.pry
-    @service = Service.create service_params 
+    pictures = s_params.delete(:service_pictures_attributes)
+    @service = Service.create s_params 
+    pictures.each do |service_picture|
+      picture = ServicePicture.new service_picture
+      picture.service_id = @service.id
+      picture.save
+    end
     respond_with :api, @service
   end
 
@@ -68,9 +74,9 @@ class Api::ServicesController < ApplicationController
     params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
       :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
       :adrenaline, :image, :restrictions, :short_description, :longitude,
-      :latitude, :city_id, :professional_id, sport_ids: [], service_pictures: [] ])
+      :latitude, :city_id, :professional_id, service_pictures_attributes: [:public_id],  sport_ids: [] ])
   end
-
+  
   def set_service
     @service = Service.find params[:id]
   end
