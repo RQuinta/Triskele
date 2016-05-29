@@ -30,12 +30,20 @@ class Api::ServicesController < ApplicationController
     else
       s_params[:event] = false
     end
+    binding.pry
     pictures = s_params.delete(:service_pictures_attributes)
+    additionals = s_params.delete(:additionals)
     @service = Service.create s_params 
     pictures.each do |service_picture|
       picture = ServicePicture.new service_picture
       picture.service_id = @service.id
       picture.save
+    end
+    binding.pry
+    additionals.each do |additional|
+      additional = Additional.new additional
+      additional.service_id = @service.id
+      additional.save
     end
     respond_with :api, @service
   end
@@ -74,7 +82,7 @@ class Api::ServicesController < ApplicationController
     params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
       :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
       :adrenaline, :image, :restrictions, :short_description, :longitude,
-      :latitude, :city_id, :professional_id, service_pictures_attributes: [:public_id],  sport_ids: [] ])
+      :latitude, :city_id, :professional_id, service_pictures_attributes: [:public_id], additionals: [:description, :excess],  sport_ids: [] ])
   end
   
   def set_service
