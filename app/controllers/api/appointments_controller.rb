@@ -6,26 +6,26 @@ class Api::AppointmentsController < ApplicationController
   has_scope :by_name
 
   def index
-    respond_with apply_scopes(City).all
+    respond_with apply_scopes(Appointment).all
   end
 
   def create
-    @city = City.create city_params
-    respond_with :api, @city
+    @appointment = Appointment.create city_params
+    respond_with :api, @appointment
   end
 
   def show
-    respond_with :api, @city
+    respond_with :api, @appointment
   end
 
   def update
-    @city.update city_params
-    respond_with :api, @city
+    @appointment.update city_params
+    respond_with :api, @appointment
   end
 
   def destroy
-    @city.destroy
-    respond_with :api, @city
+    @appointment.destroy
+    respond_with :api, @appointment
   end
 
   private

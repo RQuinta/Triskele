@@ -41296,3 +41296,210 @@ Processing by Api::ServicesController#show as JSON
   [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
   [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
 Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-29 22:21:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (0.5ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.6ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 155ms (Views: 0.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-05-29 22:22:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (1.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCity Load (1.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.6ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.4ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 155ms (Views: 0.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-05-29 22:22:16 -0300
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-05-29 22:22:16 -0300
+Processing by Api::CitiesController#index as JSON
+Processing by Api::SportsController#index as JSON
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 19ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+  [1m[36mSport Load (0.7ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 37ms (Views: 6.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:23:08 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.2ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.4ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:30:07 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 18]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 18]]
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:32:41 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.2ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:32:45 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 18]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 18]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:32:53 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.1ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:33:05 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 18]]
+  [1m[36mServicePicture Load (0.7ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 18]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:37:32 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.3ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.3ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 75ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:43:35 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 18]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 18]]
+Completed 200 OK in 85ms (Views: 0.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:43:39 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.1ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.1ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.1ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:46:08 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mService Load (0.4ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 18]]
+  [1m[36mAdditional Load (0.2ms)[0m  [1mSELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 18]]
+Completed 200 OK in 102ms (Views: 0.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/services/18.json" for 127.0.0.1 at 2016-05-29 22:46:12 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSport Load (0.1ms)[0m  [1mSELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?[0m  [["service_id", 18]]
+  [1m[35mAdditional Load (0.1ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 18]]
+  [1m[36mServicePicture Load (0.4ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 18]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.9ms)
