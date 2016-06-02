@@ -16,6 +16,7 @@ class Service < ActiveRecord::Base
   scope :by_city, -> (city) { where(city_id: city) }
   scope :by_professional, -> (professional) { where(professional_id: professional) }
   scope :by_state, -> (state) { where(state_id: state) }
+  scope :without_deleted, -> { where('deleted IS NULL') }
 
   scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
 

@@ -11,13 +11,13 @@ module RubyGettingStarted
 
     config.action_dispatch.default_headers = {
         'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+        'Access-Control-Request-Method' => %w{GET POST DELETE OPTIONS}.join(",")
     }
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', :headers => :any, :methods => [:get, :post, :delete, :options]
       end
     end
 
