@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  before_action :set_user , only:[:update, :destroy]
+  before_action :set_user , only:[:update, :show, :destroy]
 
   def create
     @user = User.create user_params
@@ -8,7 +8,11 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    respond_with :api, @user
+    if @user
+      render :json => @user.to_json(:except => [:password_digest, :token], :include => [:professional])
+    else
+      render json: { error: 'User does not exist' }, status: 404      
+    end
   end
 
   def update
@@ -24,7 +28,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password)
   end
 
   def set_user
