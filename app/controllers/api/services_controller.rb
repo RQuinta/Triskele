@@ -26,21 +26,14 @@ class Api::ServicesController < ApplicationController
     else
       s_params[:collective] = false
     end 
-    if s_params[:daytime].present? 
-      s_params[:event] = true  
-    else
-      s_params[:event] = false
-    end
-    binding.pry
-    pictures = s_params.delete(:service_pictures_attributes)
     additionals = s_params.delete(:additionals)
+    pictures = s_params.delete(:service_pictures_attributes)
     @service = Service.create s_params 
     pictures.each do |service_picture|
       picture = ServicePicture.new service_picture
       picture.service_id = @service.id
       picture.save
     end
-    binding.pry
     additionals.each do |additional|
       additional = Additional.new additional
       additional.service_id = @service.id
@@ -52,7 +45,7 @@ class Api::ServicesController < ApplicationController
   def show
     respond_to do |format|
       format.json do
-        render :json => @service.to_json(:include => [:city, :sports, :additionals, :service_pictures, :acquisitions] )
+        render :json => @service.to_json(:include => [:city, :sports, :additionals, :service_pictures] )
       end
     end
   end
