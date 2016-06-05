@@ -11,8 +11,9 @@ Rails.application.routes.draw do
     resources :states, except: [:new, :edit]
     resources :countries, except: [:new, :edit]
     resources :appointments, except: [:new, :edit]
-    resources :acqusitions, except: [:new, :edit]
+    resources :acquisitions, except: [:new, :edit]
     resources :sessions, except: [:index, :update, :new, :show, :edit]
+
   end
 
 end
