@@ -11,15 +11,17 @@ module RubyGettingStarted
 
     config.action_dispatch.default_headers = {
         'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Request-Method' => %w{GET POST DELETE OPTIONS}.join(",")
+        'Access-Control-Request-Method' => %w{GET POST PUT DELETE OPTIONS}.join(",")
     }
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :delete, :options]
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
+
+    config.active_record.observers = :acquisition_observer
 
   end
 end
