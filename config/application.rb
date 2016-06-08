@@ -22,6 +22,7 @@ module RubyGettingStarted
     end
 
     config.active_record.observers = :acquisition_observer
+    config.active_record.observers = :user_observer
 
   end
 end
