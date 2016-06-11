@@ -513,3 +513,148 @@ Migrating to AddAdditionalIdToAppointment (20160611215721)
             FROM sqlite_temp_master
             WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
 [0m
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 19:53:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services" WHERE (deleted IS NULL)
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 19:54:23 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE (deleted IS NULL)[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-11 19:54:23 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 31ms (Views: 9.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-11 19:54:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 27ms (Views: 8.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/sessions.json" for 127.0.0.1 at 2016-06-11 19:54:30 -0300
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"session"=>{"email"=>"hugoarenari@hotmail.com", "social_login"=>true}}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "hugoarenari@hotmail.com"]]
+Completed 404 Not Found in 13ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users.json" for 127.0.0.1 at 2016-06-11 19:54:30 -0300
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hugoarenari@hotmail.com", "name"=>"Hugo Arenari"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hugoarenari@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "token") VALUES (?, ?, ?)  [["name", "Hugo Arenari"], ["email", "hugoarenari@hotmail.com"], ["token", "p5qJznxjZHumSmJfGg7E3Q7w"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from after_create at /home/hugo/projetos/appitriskle/app/models/user_observer.rb:4)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "delayed_jobs" ("handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["handler", "--- !ruby/object:Delayed::PerformableMethod\nobject: !ruby/object:UserNotifier\n  _routes: \n  _action_has_layout: true\n  _mail_was_called: false\n  _message: !ruby/object:Mail::Message\n    body: !ruby/object:Mail::Body\n      boundary: \n      preamble: \n      epilogue: \n      charset: US-ASCII\n      part_sort_order:\n      - text/plain\n      - text/enriched\n      - text/html\n      parts: !ruby/array:Mail::PartsList []\n      raw_source: ''\n      encoding: 7bit\n    body_raw: \n    separate_parts: false\n    text_part: \n    html_part: \n    errors: \n    header: !ruby/object:Mail::Header\n      charset: UTF-8\n      raw_source: ''\n      fields: !ruby/array:Mail::FieldList []\n    charset: UTF-8\n    defaulted_charset: true\n    smtp_envelope_from: \n    smtp_envelope_to: \n    perform_deliveries: true\n    raise_delivery_errors: true\n    delivery_handler: \n    delivery_method: !ruby/object:Mail::SMTP\n      settings:\n        :address: localhost\n        :port: 25\n        :domain: localhost.localdomain\n        :user_name: \n        :password: \n        :authentication: \n        :enable_starttls_auto: true\n        :openssl_verify_mode: \n        :ssl: \n        :tls: \n    transport_encoding: !ruby/class 'Mail::Encodings::SevenBit'\n    mark_for_delete: false\n    raw_source: ''\n  _lookup_context: !ruby/object:ActionView::LookupContext\n    details_key: \n    details:\n      :locale:\n      - :en\n      :formats:\n      - :html\n      - :text\n      - :js\n      - :css\n      - :ics\n      - :csv\n      - :vcf\n      - :png\n      - :jpeg\n      - :gif\n      - :bmp\n      - :tiff\n      - :mpeg\n      - :xml\n      - :rss\n      - :atom\n      - :yaml\n      - :multipart_form\n      - :url_encoded_form\n      - :json\n      - :pdf\n      - :zip\n      :variants: []\n      :handlers:\n      - :erb\n      - :builder\n      - :raw\n      - :ruby\n      - :jbuilder\n    skip_default_locale: true\n    cache: true\n    prefixes:\n    - user_notifier\n    - application_mailer\n    rendered_format: \n    view_paths: !ruby/object:ActionView::PathSet\n      paths:\n      - !ruby/object:ActionView::OptimizedFileSystemResolver\n        pattern: \":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}\"\n        cache: !ruby/object:ActionView::Resolver::Cache\n          data: !ruby/object:ActionView::Resolver::Cache::SmallCache\n            backend: {}\n            default_proc: !ruby/object:Proc {}\n        path: \"/home/hugo/projetos/appitriskle/app/views\"\n  _action_name: send_signup_email\n  _response_body: \nmethod_name: :send_signup_email_without_delay\nargs:\n- !ruby/object:User\n  raw_attributes:\n    name: Hugo Arenari\n    email: hugoarenari@hotmail.com\n    id: 1\n    token: p5qJznxjZHumSmJfGg7E3Q7w\n    password_digest: \n    image: \n  attributes: !ruby/object:ActiveRecord::AttributeSet\n    attributes: !ruby/object:ActiveRecord::LazyAttributeHash\n      types:\n        id: &2 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        name: &1 !ruby/object:ActiveRecord::Type::String\n          precision: \n          scale: \n          limit: \n        email: *1\n        password_digest: *1\n        token: *1\n        image: *1\n      values:\n        id: \n        name: \n        email: \n        password_digest: \n        token: \n        image: \n      additional_types: {}\n      materialized: true\n      delegate_hash:\n        name: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: name\n          value_before_type_cast: Hugo Arenari\n          type: *1\n          value: Hugo Arenari\n        email: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: email\n          value_before_type_cast: hugoarenari@hotmail.com\n          type: *1\n          value: hugoarenari@hotmail.com\n        id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: id\n          value_before_type_cast: 1\n          type: *2\n          value: 1\n        token: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: token\n          value_before_type_cast: p5qJznxjZHumSmJfGg7E3Q7w\n          type: *1\n          value: p5qJznxjZHumSmJfGg7E3Q7w\n        password_digest: !ruby/object:ActiveRecord::Attribute::FromDatabase\n          name: password_digest\n          value_before_type_cast: \n          type: *1\n        image: !ruby/object:ActiveRecord::Attribute::FromDatabase\n          name: image\n          value_before_type_cast: \n          type: *1\n  new_record: false\n"], ["run_at", "2016-06-11 22:54:30.778403"], ["created_at", "2016-06-11 22:54:30.778591"], ["updated_at", "2016-06-11 22:54:30.778591"]]
+
+UserNotifier#send_signup_email: processed outbound mail in 18.7ms
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from after_create at /home/hugo/projetos/appitriskle/app/models/user_observer.rb:5)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "delayed_jobs" ("handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["handler", "--- !ruby/object:Delayed::PerformableMethod\nobject: !ruby/object:AdminNotifier\n  _routes: \n  _action_has_layout: true\n  _mail_was_called: false\n  _message: !ruby/object:Mail::Message\n    body: !ruby/object:Mail::Body\n      boundary: \n      preamble: \n      epilogue: \n      charset: US-ASCII\n      part_sort_order:\n      - text/plain\n      - text/enriched\n      - text/html\n      parts: !ruby/array:Mail::PartsList []\n      raw_source: ''\n      encoding: 7bit\n    body_raw: \n    separate_parts: false\n    text_part: \n    html_part: \n    errors: \n    header: !ruby/object:Mail::Header\n      charset: UTF-8\n      raw_source: ''\n      fields: !ruby/array:Mail::FieldList []\n    charset: UTF-8\n    defaulted_charset: true\n    smtp_envelope_from: \n    smtp_envelope_to: \n    perform_deliveries: true\n    raise_delivery_errors: true\n    delivery_handler: \n    delivery_method: !ruby/object:Mail::SMTP\n      settings:\n        :address: localhost\n        :port: 25\n        :domain: localhost.localdomain\n        :user_name: \n        :password: \n        :authentication: \n        :enable_starttls_auto: true\n        :openssl_verify_mode: \n        :ssl: \n        :tls: \n    transport_encoding: !ruby/class 'Mail::Encodings::SevenBit'\n    mark_for_delete: false\n    raw_source: ''\n  _lookup_context: !ruby/object:ActionView::LookupContext\n    details_key: \n    details:\n      :locale:\n      - :en\n      :formats:\n      - :html\n      - :text\n      - :js\n      - :css\n      - :ics\n      - :csv\n      - :vcf\n      - :png\n      - :jpeg\n      - :gif\n      - :bmp\n      - :tiff\n      - :mpeg\n      - :xml\n      - :rss\n      - :atom\n      - :yaml\n      - :multipart_form\n      - :url_encoded_form\n      - :json\n      - :pdf\n      - :zip\n      :variants: []\n      :handlers:\n      - :erb\n      - :builder\n      - :raw\n      - :ruby\n      - :jbuilder\n    skip_default_locale: true\n    cache: true\n    prefixes:\n    - admin_notifier\n    - application_mailer\n    rendered_format: \n    view_paths: !ruby/object:ActionView::PathSet\n      paths:\n      - !ruby/object:ActionView::OptimizedFileSystemResolver\n        pattern: \":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}\"\n        cache: !ruby/object:ActionView::Resolver::Cache\n          data: !ruby/object:ActionView::Resolver::Cache::SmallCache\n            backend: {}\n            default_proc: !ruby/object:Proc {}\n        path: \"/home/hugo/projetos/appitriskle/app/views\"\n  _action_name: send_user_signup_email\n  _response_body: \nmethod_name: :send_user_signup_email_without_delay\nargs:\n- !ruby/object:User\n  raw_attributes:\n    name: Hugo Arenari\n    email: hugoarenari@hotmail.com\n    id: 1\n    token: p5qJznxjZHumSmJfGg7E3Q7w\n    password_digest: \n    image: \n  attributes: !ruby/object:ActiveRecord::AttributeSet\n    attributes: !ruby/object:ActiveRecord::LazyAttributeHash\n      types:\n        id: &2 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        name: &1 !ruby/object:ActiveRecord::Type::String\n          precision: \n          scale: \n          limit: \n        email: *1\n        password_digest: *1\n        token: *1\n        image: *1\n      values:\n        id: \n        name: \n        email: \n        password_digest: \n        token: \n        image: \n      additional_types: {}\n      materialized: true\n      delegate_hash:\n        name: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: name\n          value_before_type_cast: Hugo Arenari\n          type: *1\n          value: Hugo Arenari\n        email: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: email\n          value_before_type_cast: hugoarenari@hotmail.com\n          type: *1\n          value: hugoarenari@hotmail.com\n        id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: id\n          value_before_type_cast: 1\n          type: *2\n          value: 1\n        token: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: token\n          value_before_type_cast: p5qJznxjZHumSmJfGg7E3Q7w\n          type: *1\n          value: p5qJznxjZHumSmJfGg7E3Q7w\n        password_digest: !ruby/object:ActiveRecord::Attribute::FromDatabase\n          name: password_digest\n          value_before_type_cast: \n          type: *1\n        image: !ruby/object:ActiveRecord::Attribute::FromDatabase\n          name: image\n          value_before_type_cast: \n          type: *1\n  new_record: false\n"], ["run_at", "2016-06-11 22:54:30.793262"], ["created_at", "2016-06-11 22:54:30.793470"], ["updated_at", "2016-06-11 22:54:30.793470"]]
+
+AdminNotifier#send_user_signup_email: processed outbound mail in 10.9ms
+  [1m[36m (51.2ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 118ms (Views: 2.8ms | ActiveRecord: 52.7ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 19:54:31 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE (deleted IS NULL)[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-11 19:54:31 -0300
+Processing by Api::CitiesController#index as JSON
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-11 19:54:31 -0300
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 32ms (Views: 20.3ms | ActiveRecord: 0.7ms)
+  [1m[36mProfessional Load (2.1ms)[0m  [1mSELECT "professionals".* FROM "professionals"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProfessional Exists (0.2ms)[0m  SELECT  1 AS one FROM "professionals" WHERE "professionals"."phone" = '123123' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "professionals" ("user_id", "phone", "doc_ident", "cpf", "passport", "active") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["phone", "123123"], ["doc_ident", "12312312"], ["cpf", "f"], ["passport", "t"], ["active", "t"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from after_create at /home/hugo/projetos/appitriskle/app/models/professional_observer.rb:4)
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "delayed_jobs" ("handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["handler", "--- !ruby/object:Delayed::PerformableMethod\nobject: !ruby/object:ProfessionalNotifier\n  _routes: \n  _action_has_layout: true\n  _mail_was_called: false\n  _message: !ruby/object:Mail::Message\n    body: !ruby/object:Mail::Body\n      boundary: \n      preamble: \n      epilogue: \n      charset: US-ASCII\n      part_sort_order:\n      - text/plain\n      - text/enriched\n      - text/html\n      parts: !ruby/array:Mail::PartsList []\n      raw_source: ''\n      encoding: 7bit\n    body_raw: \n    separate_parts: false\n    text_part: \n    html_part: \n    errors: \n    header: !ruby/object:Mail::Header\n      charset: UTF-8\n      raw_source: ''\n      fields: !ruby/array:Mail::FieldList []\n    charset: UTF-8\n    defaulted_charset: true\n    smtp_envelope_from: \n    smtp_envelope_to: \n    perform_deliveries: true\n    raise_delivery_errors: true\n    delivery_handler: \n    delivery_method: !ruby/object:Mail::SMTP\n      settings:\n        :address: localhost\n        :port: 25\n        :domain: localhost.localdomain\n        :user_name: \n        :password: \n        :authentication: \n        :enable_starttls_auto: true\n        :openssl_verify_mode: \n        :ssl: \n        :tls: \n    transport_encoding: !ruby/class 'Mail::Encodings::SevenBit'\n    mark_for_delete: false\n    raw_source: ''\n  _lookup_context: !ruby/object:ActionView::LookupContext\n    details_key: \n    details:\n      :locale:\n      - :en\n      :formats:\n      - :html\n      - :text\n      - :js\n      - :css\n      - :ics\n      - :csv\n      - :vcf\n      - :png\n      - :jpeg\n      - :gif\n      - :bmp\n      - :tiff\n      - :mpeg\n      - :xml\n      - :rss\n      - :atom\n      - :yaml\n      - :multipart_form\n      - :url_encoded_form\n      - :json\n      - :pdf\n      - :zip\n      :variants: []\n      :handlers:\n      - :erb\n      - :builder\n      - :raw\n      - :ruby\n      - :jbuilder\n    skip_default_locale: true\n    cache: true\n    prefixes:\n    - professional_notifier\n    - application_mailer\n    rendered_format: \n    view_paths: !ruby/object:ActionView::PathSet\n      paths:\n      - !ruby/object:ActionView::OptimizedFileSystemResolver\n        pattern: \":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}\"\n        cache: !ruby/object:ActionView::Resolver::Cache\n          data: !ruby/object:ActionView::Resolver::Cache::SmallCache\n            backend: {}\n            default_proc: !ruby/object:Proc {}\n        path: \"/home/hugo/projetos/appitriskle/app/views\"\n  _action_name: send_signup_email\n  _response_body: \nmethod_name: :send_signup_email_without_delay\nargs:\n- !ruby/object:Professional\n  raw_attributes:\n    id: 1\n    user_id: 1\n    phone: '123123'\n    doc_ident: '12312312'\n    cpf: false\n    passport: true\n    active: true\n  attributes: !ruby/object:ActiveRecord::AttributeSet\n    attributes: !ruby/object:ActiveRecord::LazyAttributeHash\n      types:\n        id: &3 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        user_id: &4 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        phone: &1 !ruby/object:ActiveRecord::Type::String\n          precision: \n          scale: \n          limit: \n        doc_ident: *1\n        cpf: &2 !ruby/object:ActiveRecord::Type::Boolean\n          precision: \n          scale: \n          limit: \n        passport: *2\n        active: *2\n      values:\n        id: \n        user_id: \n        phone: \n        doc_ident: \n        cpf: \n        passport: \n        active: \n      additional_types: {}\n      materialized: true\n      delegate_hash:\n        id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: id\n          value_before_type_cast: 1\n          type: *3\n          value: 1\n        user_id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: user_id\n          value_before_type_cast: 1\n          type: *4\n          value: 1\n        phone: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: phone\n          value_before_type_cast: '123123'\n          type: *1\n          value: '123123'\n        doc_ident: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: doc_ident\n          value_before_type_cast: '12312312'\n          type: *1\n          value: '12312312'\n        cpf: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: cpf\n          value_before_type_cast: false\n          type: *2\n          value: false\n        passport: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: passport\n          value_before_type_cast: true\n          type: *2\n          value: true\n        active: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: active\n          value_before_type_cast: true\n          type: *2\n          value: true\n  new_record: false\n"], ["run_at", "2016-06-11 22:56:23.171221"], ["created_at", "2016-06-11 22:56:23.171481"], ["updated_at", "2016-06-11 22:56:23.171481"]]
+
+ProfessionalNotifier#send_signup_email: processed outbound mail in 21.3ms
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from after_create at /home/hugo/projetos/appitriskle/app/models/professional_observer.rb:5)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "delayed_jobs" ("handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["handler", "--- !ruby/object:Delayed::PerformableMethod\nobject: !ruby/object:AdminNotifier\n  _routes: \n  _action_has_layout: true\n  _mail_was_called: false\n  _message: !ruby/object:Mail::Message\n    body: !ruby/object:Mail::Body\n      boundary: \n      preamble: \n      epilogue: \n      charset: US-ASCII\n      part_sort_order:\n      - text/plain\n      - text/enriched\n      - text/html\n      parts: !ruby/array:Mail::PartsList []\n      raw_source: ''\n      encoding: 7bit\n    body_raw: \n    separate_parts: false\n    text_part: \n    html_part: \n    errors: \n    header: !ruby/object:Mail::Header\n      charset: UTF-8\n      raw_source: ''\n      fields: !ruby/array:Mail::FieldList []\n    charset: UTF-8\n    defaulted_charset: true\n    smtp_envelope_from: \n    smtp_envelope_to: \n    perform_deliveries: true\n    raise_delivery_errors: true\n    delivery_handler: \n    delivery_method: !ruby/object:Mail::SMTP\n      settings:\n        :address: localhost\n        :port: 25\n        :domain: localhost.localdomain\n        :user_name: \n        :password: \n        :authentication: \n        :enable_starttls_auto: true\n        :openssl_verify_mode: \n        :ssl: \n        :tls: \n    transport_encoding: !ruby/class 'Mail::Encodings::SevenBit'\n    mark_for_delete: false\n    raw_source: ''\n  _lookup_context: !ruby/object:ActionView::LookupContext\n    details_key: \n    details:\n      :locale:\n      - :en\n      :formats:\n      - :html\n      - :text\n      - :js\n      - :css\n      - :ics\n      - :csv\n      - :vcf\n      - :png\n      - :jpeg\n      - :gif\n      - :bmp\n      - :tiff\n      - :mpeg\n      - :xml\n      - :rss\n      - :atom\n      - :yaml\n      - :multipart_form\n      - :url_encoded_form\n      - :json\n      - :pdf\n      - :zip\n      :variants: []\n      :handlers:\n      - :erb\n      - :builder\n      - :raw\n      - :ruby\n      - :jbuilder\n    skip_default_locale: true\n    cache: true\n    prefixes:\n    - admin_notifier\n    - application_mailer\n    rendered_format: \n    view_paths: !ruby/object:ActionView::PathSet\n      paths:\n      - !ruby/object:ActionView::OptimizedFileSystemResolver\n        pattern: \":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}\"\n        cache: !ruby/object:ActionView::Resolver::Cache\n          data: !ruby/object:ActionView::Resolver::Cache::SmallCache\n            backend: {}\n            default_proc: !ruby/object:Proc {}\n        path: \"/home/hugo/projetos/appitriskle/app/views\"\n  _action_name: send_professional_signup_email\n  _response_body: \nmethod_name: :send_professional_signup_email_without_delay\nargs:\n- !ruby/object:Professional\n  raw_attributes:\n    id: 1\n    user_id: 1\n    phone: '123123'\n    doc_ident: '12312312'\n    cpf: false\n    passport: true\n    active: true\n  attributes: !ruby/object:ActiveRecord::AttributeSet\n    attributes: !ruby/object:ActiveRecord::LazyAttributeHash\n      types:\n        id: &3 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        user_id: &4 !ruby/object:ActiveRecord::Type::Integer\n          precision: \n          scale: \n          limit: \n          range: !ruby/range\n            begin: -2147483648\n            end: 2147483648\n            excl: true\n        phone: &1 !ruby/object:ActiveRecord::Type::String\n          precision: \n          scale: \n          limit: \n        doc_ident: *1\n        cpf: &2 !ruby/object:ActiveRecord::Type::Boolean\n          precision: \n          scale: \n          limit: \n        passport: *2\n        active: *2\n      values:\n        id: \n        user_id: \n        phone: \n        doc_ident: \n        cpf: \n        passport: \n        active: \n      additional_types: {}\n      materialized: true\n      delegate_hash:\n        id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: id\n          value_before_type_cast: 1\n          type: *3\n          value: 1\n        user_id: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: user_id\n          value_before_type_cast: 1\n          type: *4\n          value: 1\n        phone: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: phone\n          value_before_type_cast: '123123'\n          type: *1\n          value: '123123'\n        doc_ident: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: doc_ident\n          value_before_type_cast: '12312312'\n          type: *1\n          value: '12312312'\n        cpf: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: cpf\n          value_before_type_cast: false\n          type: *2\n          value: false\n        passport: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: passport\n          value_before_type_cast: true\n          type: *2\n          value: true\n        active: !ruby/object:ActiveRecord::Attribute::FromUser\n          name: active\n          value_before_type_cast: true\n          type: *2\n          value: true\n  new_record: false\n"], ["run_at", "2016-06-11 22:56:23.184571"], ["created_at", "2016-06-11 22:56:23.184744"], ["updated_at", "2016-06-11 22:56:23.184744"]]
+
+AdminNotifier#send_professional_signup_email: processed outbound mail in 8.6ms
+  [1m[35m (46.3ms)[0m  commit transaction
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 20:02:21 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services" WHERE (deleted IS NULL)[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-11 20:02:21 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-11 20:02:21 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-11 20:03:42 -0300
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 20:03:42 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services" WHERE (deleted IS NULL)[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-11 20:03:42 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[35mSport Load (0.4ms)[0m  SELECT "sports".* FROM "sports"
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-11 20:03:51 -0300
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-11 20:03:51 -0300
+Processing by Api::SportsController#index as JSON
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE (deleted IS NULL)[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-11 20:03:51 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms)
