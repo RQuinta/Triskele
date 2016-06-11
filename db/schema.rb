@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604222321) do
+ActiveRecord::Schema.define(version: 20160611023425) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160604222321) do
     t.string  "token"
     t.float   "base_price"
     t.integer "additional_id"
+    t.integer "number_of_users_"
   end
 
   create_table "additionals", force: :cascade do |t|
