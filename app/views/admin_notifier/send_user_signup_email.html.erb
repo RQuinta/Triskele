@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1>Novo Usuário se cadastrou!</h1>
-		<p>Nome: <a href="profile/<%= @user.id %>"><%= @user.name %></a></p>
+		<p>Nome: <a href="<%= @base_url %>profile/<%= @user.id %>"><%= @user.name %></a></p>
 		<p>Email: <%= @user.email %></a></p>
 	</body>
 </html>

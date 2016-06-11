@@ -4,8 +4,8 @@
 	</head>
 	<body>
 		<h1>Nova solicitação para edição de Atividade</h1>
-		<p>Atividade: <a href="/aventura/<%= @service.id %>"></a><%= @service.name %></p>
-		<p>Profissional: <a href="/profile/<%= @professional.id %>"><%= @professional.name %></a></p>
+		<p>Atividade: <a href="<%= @base_url %>aventura/<%= @service.id %>"></a><%= @service.name %></p>
+		<p>Profissional: <a href="<%= @base_url %>profile/<%= @professional.id %>"><%= @professional.name %></a></p>
 		<p>Mensagem:</p>
 		<p><%= @edit_service.message %></p>
 	</body>

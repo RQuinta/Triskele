@@ -5,8 +5,8 @@
 	<body>
 		<h1>Nova solicitação de pré-agendamento</h1>
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
-		<p><a href="/profile/<%= @user.id %>"><%= @user.name %></a> acabou de solicitar o pré-agendamento da atividade:</p>
-		<p><a href="/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="/profile/<%= @professional.id %>"><%= @professional.user.name %></a> no dia <%= @appointment.daytime %></p>
+		<p><a href="<%= @base_url %>profile/<%= @user.id %>"><%= @user.name %></a> acabou de solicitar o pré-agendamento da atividade:</p>
+		<p><a href="<%= @base_url %>aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="<%= @base_url %>profile/<%= @professional.id %>"><%= @professional.user.name %></a> no dia <%= @appointment.daytime.to_s(:day_at_hour) %></p>
 		<table style="width:100%">
 			<tr>
 				<td><%= @service.name %></td>
