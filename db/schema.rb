@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611023425) do
+ActiveRecord::Schema.define(version: 20160611041852) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160611023425) do
     t.string  "token"
     t.float   "base_price"
     t.integer "additional_id"
-    t.integer "number_of_users_"
+    t.integer "slots"
   end
 
   create_table "additionals", force: :cascade do |t|
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160611023425) do
     t.text     "doubt_answer"
     t.text     "doubt"
     t.datetime "daytime"
+    t.integer  "slots"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -106,7 +107,6 @@ ActiveRecord::Schema.define(version: 20160611023425) do
     t.integer  "professional_id"
     t.string   "longitude"
     t.string   "latitude"
-    t.string   "password_digest"
     t.datetime "daytime"
     t.boolean  "event"
     t.text     "required_experience"

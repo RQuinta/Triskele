@@ -12,5 +12,6 @@ class Acquisition < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :service_id, presence: true
 	validates :base_price, presence: true
+	validates :slots, presence: true
 
 end

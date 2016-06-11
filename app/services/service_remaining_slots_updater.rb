@@ -14,7 +14,7 @@ class ServiceRemainingSlotsUpdater
   private
 
   def total_acquisitions_calculator(acquisitions)
-    acquisitions.inject(0) {|acc,acquisition| acc + acquisition.number_of_users }
+    acquisitions.inject(0) {|acc,acquisition| acc + acquisition.slots }
   end
   
   def remaining_slots_calculator(acquisitions)

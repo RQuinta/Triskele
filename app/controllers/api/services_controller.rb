@@ -22,7 +22,8 @@ class Api::ServicesController < ApplicationController
     s_params = service_params
     s_params[:aproved] = false
     if s_params[:max_clients] > 1
-      s_params[:collective] = true  
+      s_params[:collective] = true
+      s_params[:remaining_slots] = s_params[:max_clients]  
     else
       s_params[:collective] = false
     end 
