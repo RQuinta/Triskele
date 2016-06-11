@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
   
-  default from: "contato@triskele.me"
+  default from: "meajuda@triskele.me"
   layout 'mailer'
   
 end

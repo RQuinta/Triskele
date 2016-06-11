@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+	<body>
+		<h1>Nova solicitação para edição de Atividade</h1>
+		<p>Atividade: <a href="/aventura/<%= @service.id %>"></a><%= @service.name %></p>
+		<p>Profissional: <a href="/profile/<%= @professional.id %>"><%= @professional.name %></a></p>
+		<p>Mensagem:</p>
+		<p><%= @edit_service.message %></p>
+	</body>
+</html>

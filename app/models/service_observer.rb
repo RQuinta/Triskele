@@ -1,7 +1,8 @@
 class ServiceObserver < ActiveRecord::Observer
   
   def after_create(service)
-  	ServiceNotifier.send_signup_email(service).deliver
+  	ProfessionalNotifier.send_service_create_email(service).deliver
+  	AdminNotifier.send_service_create_email(service).deliver
   end
 
 end

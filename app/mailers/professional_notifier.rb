@@ -3,13 +3,30 @@ class ProfessionalNotifier < ApplicationMailer
 	def send_signup_email(professional)
 		@professional = professional
 	    mail( :to => professional.user.email,
-	    :subject => 'Registro Profissional')
+	    :subject => 'Bem-Vindo!')
 	end
 
-	def send_service_acquisition(acquisition)
-	    @professional = acqusition.professional
-	    mail( :to => professional.user.email,
-	    :subject => 'Registro Profissional')		
+	def send_acquisition_email(acquisition)
+	    @professional = acquisition.service.professional
+	    @user = acquisition.user
+	    @service = acquisition.service
+	    @acquisition = acquisition
+	    mail( :to => acquisition.service.professional.user.email,
+	    :subject => 'Compra de Atividade')		
+	end
+
+	def send_service_create_email(service)
+	    @professional = service.professional
+	    @service = service
+	    mail( :to => service.professional.user.email,
+	    :subject => 'Atividade Registrada')		
+	end
+
+	def send_edit_service_email(service)
+	    @professional = service.professional
+	    @service = service
+	    mail( :to => service.professional.user.email,
+	    :subject => 'Atividade Registrada')		
 	end
 
 end
