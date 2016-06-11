@@ -12,7 +12,7 @@
 				<td><%= @service.name %></td>
 				<td>R$ <%= @acquisition.base_price %></td> 
 			</tr>
-			<% if @acquisition.additional.description %>
+			<% if @acquisition.additional %>
 				<tr>
 					<td><%= @acquisition.additional.description %></td>
 					<td>R$ <%= @acquisition.additional.excess %></td> 
@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td>Total</td>
-				<% if @acquisition.additional.excess %>
+				<% if @acquisition.additional %>
 					<td><%= ( @acquisition.additional.excess + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
 				<% else %>
 					<td><%= @acquisition.base_price * @acquisition.slots.to_i %></td>

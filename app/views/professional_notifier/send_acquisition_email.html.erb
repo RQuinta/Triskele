@@ -3,7 +3,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <div style="text-align: center;font-family:Helvetica,Arial,sans-serif;">
+    <div style="text-align: center;font-family:Helvetica,Arial,sans-serif;font-size: 18px">
 	    <div style="padding-bottom: 40px; padding-top: 40px;">
 	        <img src="http://res.cloudinary.com/triskele/image/upload/v1465673621/triskele-logo-email.png" height="34" alt="Triskele">
 	    </div>
@@ -35,7 +35,7 @@
 					</tr>
 					<tr>
 						<td>Total</td>
-						<% if @acquisition.additional.excess %>
+						<% if @acquisition.additional %>
 							<td>R$ <%= ( @acquisition.additional.excess + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
 						<% else %>
 							<td>R$ <%= @acquisition.base_price * @acquisition.slots.to_i %></td>
