@@ -1,0 +1,515 @@
+  [1m[36m (47.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (51.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSport (20160207131833)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "water" boolean, "air" boolean, "land" boolean, "need_documentation" boolean) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207131833"]]
+  [1m[35m (42.8ms)[0m  commit transaction
+Migrating to CreateCountry (20160207132059)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132059"]]
+  [1m[35m (45.0ms)[0m  commit transaction
+Migrating to CreateState (20160207132232)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "country_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132232"]]
+  [1m[35m (48.7ms)[0m  commit transaction
+Migrating to CreateCity (20160207132340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132340"]]
+  [1m[35m (46.5ms)[0m  commit transaction
+Migrating to CreateService (20160207132710)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "min_clients" integer, "max_clients" integer, "collective" boolean, "rating" integer, "city_id" integer, "image" varchar, "adrenaline" integer, "short_description" text, "how_to_get" text, "place" text, "description" text, "duration" text, "included" text, "not_included" text, "restrictions" text, "bring" text, "physical_effort" integer, "aproved" boolean, "professional_id" integer, "longitude" varchar, "latitude" varchar) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132710"]]
+  [1m[35m (47.7ms)[0m  commit transaction
+Migrating to CreateProfessional (20160207133937)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "professionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "phone" varchar, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207133937"]]
+  [1m[35m (48.3ms)[0m  commit transaction
+Migrating to CreateDelayedJobs (20160207134704)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207134704"]]
+  [1m[36m (43.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUser (20160207135557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "token" varchar, "image" varchar) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207135557"]]
+  [1m[36m (51.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableSportService (20160207200321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "services_sports" ("sport_id" integer NOT NULL, "service_id" integer NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_sport_id_and_service_id" ON "services_sports" ("sport_id", "service_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_service_id_and_sport_id" ON "services_sports" ("service_id", "sport_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207200321"]]
+  [1m[35m (47.0ms)[0m  commit transaction
+Migrating to CreateServicePicture (20160208184817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "service_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "public_id" varchar, "description" varchar, "service_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160208184817"]]
+  [1m[35m (42.9ms)[0m  commit transaction
+Migrating to AddDateTimeInService (20160208223207)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "services" ADD "daytime" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "services" ADD "event" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208223207"]]
+  [1m[36m (36.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAdditional (20160208230227)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "additionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "excess" integer, "service_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208230227"]]
+  [1m[36m (49.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAppointment (20160209003748)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "doubt_answer" text, "doubt" text, "daytime" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209003748"]]
+  [1m[36m (43.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAcquisition (20160209004514)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209004514"]]
+  [1m[36m (44.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddRequiredExperienceToService (20160601020021)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "required_experience" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160601020021"]]
+  [1m[36m (73.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeletedToService (20160602033805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "deleted" boolean[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160602033805"]]
+  [1m[36m (37.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToAcquisition (20160604072644)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "acquisitions" ADD "commentary" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604072644"]]
+  [1m[36m (36.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddAnotherFieldsToAcquition (20160604222321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "acquisitions" ADD "token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "base_price" float
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "acquisitions" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604222321"]]
+  [1m[36m (38.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsOnAcquisition (20160611023425)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611023425"]]
+  [1m[36m (36.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsToAppointments (20160611041852)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "appointments" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611041852"]]
+  [1m[36m (34.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddRemainingSlotsToService (20160611180702)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "remaining_slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611180702"]]
+  [1m[36m (42.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddTokenAndPaymentMethodToAcquision (20160611194737)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "payment_method_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "payment_method" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160611194737"]]
+  [1m[35m (56.2ms)[0m  commit transaction
+Migrating to AlterColumnPaymentMethodTokenOnAcquisition (20160611195950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "aacquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acquisitions"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "acquisitions"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aacquisitions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aacquisitions"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611195950"]]
+  [1m[36m (34.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdditionalToAppointment (20160611215721)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "appointments" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611215721"]]
+  [1m[36m (39.5ms)[0m  [1mcommit transaction[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AlterColumnAdditionalToAdditionalIdOnAppointment (20160611221844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (46.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (51.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSport (20160207131833)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "water" boolean, "air" boolean, "land" boolean, "need_documentation" boolean) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207131833"]]
+  [1m[35m (49.1ms)[0m  commit transaction
+Migrating to CreateCountry (20160207132059)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132059"]]
+  [1m[35m (45.0ms)[0m  commit transaction
+Migrating to CreateState (20160207132232)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "country_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132232"]]
+  [1m[35m (49.4ms)[0m  commit transaction
+Migrating to CreateCity (20160207132340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132340"]]
+  [1m[35m (50.6ms)[0m  commit transaction
+Migrating to CreateService (20160207132710)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "min_clients" integer, "max_clients" integer, "collective" boolean, "rating" integer, "city_id" integer, "image" varchar, "adrenaline" integer, "short_description" text, "how_to_get" text, "place" text, "description" text, "duration" text, "included" text, "not_included" text, "restrictions" text, "bring" text, "physical_effort" integer, "aproved" boolean, "professional_id" integer, "longitude" varchar, "latitude" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132710"]]
+  [1m[35m (45.2ms)[0m  commit transaction
+Migrating to CreateProfessional (20160207133937)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "professionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "phone" varchar, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207133937"]]
+  [1m[35m (48.0ms)[0m  commit transaction
+Migrating to CreateDelayedJobs (20160207134704)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207134704"]]
+  [1m[36m (49.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUser (20160207135557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "token" varchar, "image" varchar) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207135557"]]
+  [1m[36m (45.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableSportService (20160207200321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "services_sports" ("sport_id" integer NOT NULL, "service_id" integer NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_sport_id_and_service_id" ON "services_sports" ("sport_id", "service_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_service_id_and_sport_id" ON "services_sports" ("service_id", "sport_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207200321"]]
+  [1m[35m (46.4ms)[0m  commit transaction
+Migrating to CreateServicePicture (20160208184817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "service_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "public_id" varchar, "description" varchar, "service_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160208184817"]]
+  [1m[35m (51.3ms)[0m  commit transaction
+Migrating to AddDateTimeInService (20160208223207)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "services" ADD "daytime" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "services" ADD "event" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208223207"]]
+  [1m[36m (38.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAdditional (20160208230227)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "additionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "excess" integer, "service_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208230227"]]
+  [1m[36m (46.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAppointment (20160209003748)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "doubt_answer" text, "doubt" text, "daytime" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209003748"]]
+  [1m[36m (69.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAcquisition (20160209004514)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209004514"]]
+  [1m[36m (46.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddRequiredExperienceToService (20160601020021)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "services" ADD "required_experience" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160601020021"]]
+  [1m[36m (44.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeletedToService (20160602033805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "deleted" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160602033805"]]
+  [1m[36m (41.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToAcquisition (20160604072644)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "commentary" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604072644"]]
+  [1m[36m (40.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddAnotherFieldsToAcquition (20160604222321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "acquisitions" ADD "token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "base_price" float
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "acquisitions" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604222321"]]
+  [1m[36m (36.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsOnAcquisition (20160611023425)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611023425"]]
+  [1m[36m (36.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsToAppointments (20160611041852)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "appointments" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611041852"]]
+  [1m[36m (60.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddRemainingSlotsToService (20160611180702)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "remaining_slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611180702"]]
+  [1m[36m (37.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddTokenAndPaymentMethodToAcquision (20160611194737)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "payment_method_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "payment_method" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160611194737"]]
+  [1m[35m (36.2ms)[0m  commit transaction
+Migrating to AlterColumnPaymentMethodTokenOnAcquisition (20160611195950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "aacquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "acquisitions"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "acquisitions"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "aacquisitions"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aacquisitions"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611195950"]]
+  [1m[36m (38.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdditionalToAppointment (20160611215721)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdditionalIdToAppointment (20160611215721)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "appointments" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611215721"]]
+  [1m[36m (36.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[36m (45.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (58.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSport (20160207131833)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "water" boolean, "air" boolean, "land" boolean, "need_documentation" boolean) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207131833"]]
+  [1m[35m (53.4ms)[0m  commit transaction
+Migrating to CreateCountry (20160207132059)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132059"]]
+  [1m[35m (52.9ms)[0m  commit transaction
+Migrating to CreateState (20160207132232)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "country_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132232"]]
+  [1m[35m (53.3ms)[0m  commit transaction
+Migrating to CreateCity (20160207132340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state_id" integer, "active" boolean) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132340"]]
+  [1m[35m (75.1ms)[0m  commit transaction
+Migrating to CreateService (20160207132710)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "min_clients" integer, "max_clients" integer, "collective" boolean, "rating" integer, "city_id" integer, "image" varchar, "adrenaline" integer, "short_description" text, "how_to_get" text, "place" text, "description" text, "duration" text, "included" text, "not_included" text, "restrictions" text, "bring" text, "physical_effort" integer, "aproved" boolean, "professional_id" integer, "longitude" varchar, "latitude" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132710"]]
+  [1m[35m (56.7ms)[0m  commit transaction
+Migrating to CreateProfessional (20160207133937)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "professionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "phone" varchar, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207133937"]]
+  [1m[35m (73.5ms)[0m  commit transaction
+Migrating to CreateDelayedJobs (20160207134704)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207134704"]]
+  [1m[36m (59.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUser (20160207135557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "token" varchar, "image" varchar) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207135557"]]
+  [1m[36m (57.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableSportService (20160207200321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "services_sports" ("sport_id" integer NOT NULL, "service_id" integer NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_sport_id_and_service_id" ON "services_sports" ("sport_id", "service_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_services_sports_on_service_id_and_sport_id" ON "services_sports" ("service_id", "sport_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207200321"]]
+  [1m[35m (54.9ms)[0m  commit transaction
+Migrating to CreateServicePicture (20160208184817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "service_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "public_id" varchar, "description" varchar, "service_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160208184817"]]
+  [1m[35m (76.0ms)[0m  commit transaction
+Migrating to AddDateTimeInService (20160208223207)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "services" ADD "daytime" datetime
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "services" ADD "event" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208223207"]]
+  [1m[36m (45.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAdditional (20160208230227)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "additionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "excess" integer, "service_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208230227"]]
+  [1m[36m (71.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAppointment (20160209003748)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "doubt_answer" text, "doubt" text, "daytime" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209003748"]]
+  [1m[36m (56.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAcquisition (20160209004514)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209004514"]]
+  [1m[36m (73.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddRequiredExperienceToService (20160601020021)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "required_experience" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160601020021"]]
+  [1m[36m (50.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeletedToService (20160602033805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "deleted" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160602033805"]]
+  [1m[36m (69.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToAcquisition (20160604072644)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "acquisitions" ADD "commentary" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604072644"]]
+  [1m[36m (43.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddAnotherFieldsToAcquition (20160604222321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "base_price" float
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "acquisitions" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604222321"]]
+  [1m[36m (41.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsOnAcquisition (20160611023425)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611023425"]]
+  [1m[36m (43.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsToAppointments (20160611041852)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "appointments" ADD "slots" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611041852"]]
+  [1m[36m (45.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddRemainingSlotsToService (20160611180702)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "services" ADD "remaining_slots" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611180702"]]
+  [1m[36m (49.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddTokenAndPaymentMethodToAcquision (20160611194737)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "acquisitions" ADD "payment_method_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "payment_method" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160611194737"]]
+  [1m[35m (40.4ms)[0m  commit transaction
+Migrating to AlterColumnPaymentMethodTokenOnAcquisition (20160611195950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "aacquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acquisitions"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "acquisitions"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aacquisitions"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aacquisitions"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611195950"]]
+  [1m[36m (44.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdditionalIdToAppointment (20160611215721)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "appointments" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611215721"]]
+  [1m[36m (44.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
