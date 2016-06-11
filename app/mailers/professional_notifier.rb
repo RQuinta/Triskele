@@ -22,11 +22,4 @@ class ProfessionalNotifier < ApplicationMailer
 	    :subject => 'Atividade Registrada')		
 	end
 
-	def send_edit_service_email(service)
-	    @professional = service.professional
-	    @service = service
-	    mail( :to => service.professional.user.email,
-	    :subject => 'Atividade Registrada')		
-	end
-
 end

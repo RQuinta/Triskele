@@ -7,5 +7,27 @@
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
 		<p><a href="/profile/<%= @user.id %>"><%= @user.name %></a> acabou de comprar a atividade:</p>
 		<p><a href="/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="/profile/<%= @professional.id %>"><%= @professional.user.name %></a>.</p>
+		<table style="width:100%">
+			<tr>
+				<td><%= @service.name %></td>
+				<td>R$ <%= @acquisition.base_price %></td> 
+			</tr>
+			<tr>
+				<td><%= @acquisition.additional.description %></td>
+				<td>R$ <%= @acquisition.additional.excess %></td> 
+			</tr>
+			<tr>
+				<td>Nº Pessoas</td>
+				<td><%= @acquisition.slots %></td> 
+			</tr>
+			<tr>
+				<td>Total</td>
+				<% if @acquisition.additional.excess %>
+					<td><%= ( @acquisition.additional.excess + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
+				<% else %>
+					<td><%= @acquisition.base_price * @acquisition.slots.to_i %></td>
+				<% end %>
+			</tr>
+		</table>
 	</body>
 </html>

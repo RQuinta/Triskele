@@ -7,5 +7,7 @@
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
 		<p><a href="/profile/<%= @user.id %>"><%= @user.name %></a> acabou de comentar a atividade:</p>
 		<p><a href="/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="/profile/<%= @professional.id %>"><%= @professional.user.name %></a>.</p>
+		<p>Comentário:</p>
+		<p><%= @acquisition.commentary</p>
 	</body>
 </html>

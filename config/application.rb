@@ -23,6 +23,9 @@ module RubyGettingStarted
 
     config.active_record.observers = :acquisition_observer
     config.active_record.observers = :user_observer
+    config.active_record.observers = :professional_observer
+    config.active_record.observers = :service_observer
+    config.active_record.observers = :appointment_observer
 
   end
 end
