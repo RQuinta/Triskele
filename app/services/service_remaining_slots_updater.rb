@@ -5,7 +5,7 @@ class ServiceRemainingSlotsUpdater
   end
 
   def update_remaining_slots
-     if service.event 
+     if @service.event 
        @service.remaining_slots = remaining_slots_calculator(@service.acquisitions)
        @service.save
      end

@@ -6,7 +6,7 @@ class AcquisitionObserver < ActiveRecord::Observer
       ProfessionalNotifier.send_acquisition_email(acquisition).deliver
     end
   	AdminNotifier.send_acquisition_email(acquisition).deliver
-  	ServiceRemainingUpdater.new(acquisition.service).update_slots
+  	ServiceRemainingSlotsUpdater.new(acquisition.service).update_remaining_slots
   end
 
   def after_update(acquisition)

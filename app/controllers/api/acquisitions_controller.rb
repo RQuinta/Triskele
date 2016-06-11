@@ -31,7 +31,7 @@ class Api::AcquisitionsController < ApplicationController
   private
 
   def acquisition_params
-    params.require(:acquisition).permit([:service_id, :user_id, :additional_id, :rating, :commentary, :base_price])
+    params.require(:acquisition).permit([:service_id, :user_id, :additional_id, :rating, :commentary, :base_price, :payment_method, :payment_token, :slots])
   end
 
   def set_acquisition_by_token

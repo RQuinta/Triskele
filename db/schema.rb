@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611195950) do
+ActiveRecord::Schema.define(version: 20160611221844) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160611195950) do
     t.text     "doubt"
     t.datetime "daytime"
     t.integer  "slots"
+    t.integer  "additional_id"
   end
 
   create_table "cities", force: :cascade do |t|
