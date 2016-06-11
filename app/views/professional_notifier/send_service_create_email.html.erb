@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="text-align: center;font-family:Helvetica,Arial,sans-serif;">
+
+	    <div style="padding-bottom: 40px; padding-top: 40px;">
+	        <img src="http://res.cloudinary.com/triskele/image/upload/v1465673621/triskele-logo-email.png" height="34" alt="Triskele">
+	    </div>
+	    
+	    <div style="background-color: #1E88E5; padding-top: 2px; padding-bottom: 2px;">
+	        <h1 style="color: white; font-size: 30px; line-height:160%">Tudo certo!</h1>
+	    </div>
+
+	    <div style="max-width: 768px; margin: auto; color: #757575">
+	        <div style="width: 75%; margin: auto;">
+	            <h2 style="font-weight: bold; color: #616161; margin-bottom: 32px;">Ol&aacute;, <b style="color: #1E88E5"><%= @professional.user.name %></b>!</h2>
+	            <p style="margin: 20px; margin-bottom: 32px;">Recebemos sua solicita&ccedil;&atilde;o para cadastrar a atividade: <%= @service.name %>, dia <%= @service.daytime.to_s(:month_and_year) %></p>
+	            <p style="margin: 20px; margin-bottom: 32px;">Estaremos avaliando ela o quanto antes para torn&aacute;-la dispon&iacute;vel.</p>
+	            <p style="margin: 20px; margin-bottom: 32px;">Obrigado pela compreens&atilde;o.</p>
+	            <p style="margin: 20px; margin-bottom: 32px;">Abra&ccedil;os,<br>Equipe Triskele</p>
+	        </div>
+	        
+	        <hr style="width:80%;border:0;border-top:1px solid #ddd; padding-bottom: 16px">
+	        <div style="width: 75%; margin: auto;">
+	            <p style="margin:0;color:#999;font-size:12px;padding-bottom:16px;">
+	            Em caso de qualquer d&uacute;vida, fique &agrave; vontade para responder esse email ou nos contatar no
+	              <a href="mailto:meajuda@triskele.me" style="color:#1E88E5;font-weight:bold;text-decoration:none;" target="_blank">meajuda@triskele.me</a>.
+               	</p>
+	            <tr style="padding-bottom:8px; margin-bottom: 16px;">
+	              <td style="font-family:Helvetica,Arial,sans-serif;line-height:160%;padding-bottom:32px;text-align:center">
+	                <a href="https://www.facebook.com/triskele.me/" style="color:#6d2177;font-weight:bold;text-decoration:none" target="_blank" data-saferedirecturl="https://www.facebook.com/triskele.me/">
+	                  <img alt="Facebook" src="https://lh3.googleusercontent.com/LsT7mtD2sMwO5JfGlI8zO0cMgNrW7rvdjjqFnuH3x4sYPQJvftqOeuzZ1kQYX0IhZbrjotxD2KpwQ7WoJxtpmnDK2BYu30pvYgwcVi8Qn3aFX-cq2FEY36DqSQNxaE7cSbMEYzVZpomB2Q-w61-qXGS8cDFNC1ElnjiYVgkkZWK9HmL-2jzZzCAbiM3L-P3bQMb5gBfX4eYsre1vbFMog20NeyzCzJ9NrS9mIzRtvshZkEB6RuIQPGqA1ipRdNkiF4b0h-J3hG6OE8k4zGiXgTjcQT5YnIpUveLrBXdRbI3d4VX-mzqaGSM85xoLRqqlNsBlQMgu5E4s8AnqmKIAs185SSPpmV2yCtDymY5-0xfZHhiovk8TluP17a1PqRxyYxR1VJkoOiI9X4C6gpvcthjGBBKG2HKHSBT0qh-GHGoy6u0QPlFw-iG3hLbTM35kK5-OGu0Z4uNyeA8T3jW9uK3CMNE5ydJpue9aUY32b4hjcIXZnpxnf5Rbr_ccMGZBCh8X_E0YssuQxfqJc145R5gNvByaakQWvWQlCf79PFbmaRmPQjfR8G6Vn_YCnPaeISvsoZ7sAhfK1etsLMSfpB1qmm60rB8=s32-no" width="32" style="border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none">
+	                </a>
+	                &nbsp;&nbsp;
+	                <a href="https://twitter.com/triskele_me" style="color:#6d2177;font-weight:bold;text-decoration:none" target="_blank" data-saferedirecturl="https://twitter.com/triskele_me">
+	                  <img alt="Twitter" src="https://lh3.googleusercontent.com/a1USqZ9UOJyvQZLFoDFoTgbLFmWkL0VwtJdCE-mw-BKsVDHReVsNVQL1F2kNImjF6ugY-ZTzRAr1l5VN2MHNT_4io9H7JO5P-CIs6uT3Y8OXRLlk5O6K6zjMmvZrUbXQveDYte1-vCArTaO20yXd6lcbyoPNAtlRsgPeb83HN5GehFP8p7j_ZcbBzNkphqRC7idCCuRWoh0NAG1aP4o16usnr59wmmVMNRMeIq-VRCnKgu01J55gaFfw-K6DD3U42DdNUx-5RwdxJvpmPFqW8U0v7dsh7WUO6pPtYUA3NCKBqR5lUhT_nLMs4NXViZS2APi2ZtuZr6YuTuCX5WjivB4-HwO5ndcffbaOHKEBXGl3XF0r_23ia4t1rZYz5WgLGFuKcv7wH_5mcYTmCCNr52C5F9arWE4FDoAiRzVdynU8ga2EUZr9eikNP4LCNv5CAijiR__wTQ8a_itBFq39JciJE5COm81JF_MtnApiDGHKp_7490YVsALKRk1vAXTSZE36fmsbtMosHc5VW7B6wmj8e4Qr92wFuMTDlliH_JxtFkQKcswvhw8CL5WY_MniSO6S76sP1f-90YJpKnEd4cRLY4Jf6ek=s32-no" width="32" style="border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none">
+	                </a>
+	                &nbsp;&nbsp;
+	                <a href="https://www.linkedin.com/company/triskele" style="color:#6d2177;font-weight:bold;text-decoration:none" target="_blank" data-saferedirecturl="https://www.linkedin.com/company/triskele">
+	                  <img alt="LinkedIn" src="https://lh3.googleusercontent.com/IbKpkWiN41KQ8GJY9NcmByIF-6dsKUxFUOQ33enRpOwnS4N9ZZHl2WUDY9WCxOO0GXq492nE9Keun-L1IUvmFpe3VYMk3i9rNcntuKDjdNGBDCrr_m3hDkBIYR0yQs1vOI2fUWJCOSR_1G2wDJGZGICUb_xmVbSCfQNoV-uq2N6iMqsbfIAlB8Jzq7ypiDyl9hqOhZZBHSYNGJnkqeLC8TO74ahUjF0x-4HwmBjTbkF9Urk4EHMEcggptixb2rG9fwqZ4N9BOE7D4OBZrxBbTWJ7GnKgiXrTgrGxF87e7EVt8GQXwECP1Mvz3BZNS3_GpzOqzXl4GrjdCNTiuOoT8pQLqR4d_CqT0LG6QXTH6kfpuS1NPbJyxmwnmqmdC8NT8Bkm5Jr5AoTCZ31xeQyL6lyGVYoSrg6IGd3Sfy0Fs2ojXbWxLNG65FIPxtQyQkChUXFfWmUPtGnX3m65PFhi2K-HI-3GZOU-dThWDsLvFwH1HZgD1Sz9wLNx_yZWm-dFNlMkqHDA6Uxc2Fp2krPKqWAQzcW9GT7k-wMtfCKI5GYINUXeTh0xGgHpDbj0oadaiHtA88ulH3hdOuPaDB1nJDhd6addPck=s32-no" width="32" style="border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none">
+	                </a>
+	              </td>
+	            </tr>
+	            <div style="padding-bottom: 16px"></div>
+	            <hr style="margin-right:auto;margin-left:auto;width:30px;border:0;border-top:1px solid #ddd;padding-bottom:16px;">
+	            <p style="margin:0;color:#999;font-size:12px;padding-bottom:40px;">Triskele 2016</p>
+	        </div>
+	    </div>
+	</div>
+  </body>
+</html>

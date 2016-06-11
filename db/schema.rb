@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611180702) do
+ActiveRecord::Schema.define(version: 20160611194737) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160611180702) do
     t.float   "base_price"
     t.integer "additional_id"
     t.integer "slots"
+    t.string  "payment_method_token"
+    t.string  "payment_method"
   end
 
   create_table "additionals", force: :cascade do |t|
