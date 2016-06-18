@@ -10,7 +10,7 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.create city_params
+    @appointment = Appointment.create appointment_params
     respond_with :api, @appointment
   end
 
@@ -19,7 +19,7 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def update
-    @appointment.update city_params
+    @appointment.update appointment_params
     respond_with :api, @appointment
   end
 
@@ -30,8 +30,8 @@ class Api::AppointmentsController < ApplicationController
 
   private
 
-  def city_params
-    params.require(:appointment).permit([:user_id, :service_id, :additional_id, :daytime, :doubt, :doubt_answer])
+  def appointment_params
+    params.require(:appointment).permit([:user_id, :service_id, :additional_id, :slots, :daytime, :doubt, :doubt_answer])
   end
 
   def set_appointment
