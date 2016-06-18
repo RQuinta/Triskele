@@ -36,7 +36,7 @@ class Api::AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit([:user_id, :service_id, :additional_id, :slots, :daytime, :doubt, :doubt_answer])
+    params.require(:appointment).permit([:user_id, :service_id, :base_price, :additional_price, :additional_id, :slots, :daytime, :doubt, :doubt_answer])
   end
 
    def set_appointment_by_token
