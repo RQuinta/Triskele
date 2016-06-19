@@ -14,7 +14,7 @@ class Service < ActiveRecord::Base
   scope :by_city, -> (city) { where(city_id: city) }
   scope :by_professional, -> (professional) { where( professional_id: professional) }
   scope :by_state, -> (state) { where(state_id: state) }
-  scope :without_deleted, -> { where('deleted IS NULL') }
+  scope :without_deleted, -> { where(deleted: [false])}
 
   scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
 
@@ -32,6 +32,7 @@ class Service < ActiveRecord::Base
     self.sales_counter ||= 0
     self.aproved ||= false
     self.deleted ||= false
+    self.rating ||= 0
     self.collective ||= self.max_clients > 1 ? true : false
     self.remaining_slots ||= self.max_clients if self.event 
   end
