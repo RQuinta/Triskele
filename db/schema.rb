@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619184918) do
+ActiveRecord::Schema.define(version: 20160619210507) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20160619184918) do
 
   create_table "professionals", force: :cascade do |t|
     t.integer "user_id"
-    t.string  "phone"
     t.string  "doc_ident"
     t.boolean "cpf"
     t.boolean "passport"
@@ -144,12 +143,21 @@ ActiveRecord::Schema.define(version: 20160619184918) do
     t.boolean "active"
   end
 
+  create_table "table_edit_services", force: :cascade do |t|
+    t.text    "message"
+    t.integer "service_id"
+    t.text    "commentary"
+    t.boolean "approved"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
     t.string "token"
     t.string "image"
+    t.text   "about"
+    t.string "phone"
   end
 
 end
