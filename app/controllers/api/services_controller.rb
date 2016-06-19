@@ -19,14 +19,7 @@ class Api::ServicesController < ApplicationController
   end
 
   def create
-    s_params = service_params
-    s_params[:aproved] = false
-    if s_params[:max_clients] > 1
-      s_params[:collective] = true
-      s_params[:remaining_slots] = s_params[:max_clients]  
-    else
-      s_params[:collective] = false
-    end 
+    s_params = service_params 
     additionals = s_params.delete(:additionals)
     pictures = s_params.delete(:service_pictures_attributes)
     @service = Service.create s_params 
@@ -52,16 +45,6 @@ class Api::ServicesController < ApplicationController
   end
 
   def update
-    if service_params[:max_clients] > 1
-      service_params[:collective] = true  
-    else
-      service_params[:collective] = false
-    end 
-    if service_params[:daytime].present? 
-      service_params[:event] = true  
-    else
-      service_params[:event] = false
-    end
     @service.update service_params
     respond_with :api, @service
   end

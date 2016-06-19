@@ -2620,3 +2620,46 @@ Can't verify CSRF token authenticity
 [ActiveJob]   [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "delayed_jobs" ("queue", "handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["queue", "mailers"], ["handler", "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n  job_class: ActionMailer::DeliveryJob\n  job_id: 6f40e1f8-b5fe-467e-921d-5072d80aa751\n  queue_name: mailers\n  arguments:\n  - AdminNotifier\n  - send_acquisition_email\n  - deliver_now\n  - _aj_globalid: gid://ruby-getting-started/Acquisition/1\n"], ["run_at", "2016-06-18 18:55:39.272146"], ["created_at", "2016-06-18 18:55:39.273099"], ["updated_at", "2016-06-18 18:55:39.273099"]]
   [1m[35m (5.3ms)[0m  commit transaction
 Completed 201 Created in 161ms (Views: 8.1ms | ActiveRecord: 9.7ms)
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT  "cities".* FROM "cities"  ORDER BY "cities"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSalesCounterOnService (20160619184918)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "services" ADD "sales_counter" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160619184918"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT  "cities".* FROM "cities"  ORDER BY "cities"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "services" ("name", "price", "min_clients", "max_clients", "city_id", "adrenaline", "sales_counter", "aproved", "deleted", "collective") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Try"], ["price", 100.0], ["min_clients", 1], ["max_clients", 10], ["city_id", 1], ["adrenaline", 4], ["sales_counter", 0], ["aproved", "f"], ["deleted", "f"], ["collective", "t"]]
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 92031089-fb39-4770-8076-5a949c1c25c5) to DelayedJob(mailers) with arguments: "ProfessionalNotifier", "send_service_create_email", "deliver_now", gid://ruby-getting-started/Service/3
+[ActiveJob]   [1m[35mSQL (0.7ms)[0m  INSERT INTO "delayed_jobs" ("queue", "handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["queue", "mailers"], ["handler", "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n  job_class: ActionMailer::DeliveryJob\n  job_id: 92031089-fb39-4770-8076-5a949c1c25c5\n  queue_name: mailers\n  arguments:\n  - ProfessionalNotifier\n  - send_service_create_email\n  - deliver_now\n  - _aj_globalid: gid://ruby-getting-started/Service/3\n"], ["run_at", "2016-06-19 18:54:28.172947"], ["created_at", "2016-06-19 18:54:28.173686"], ["updated_at", "2016-06-19 18:54:28.173686"]]
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 7fd20fbf-4bda-46a4-9cbe-c5dce7863584) to DelayedJob(mailers) with arguments: "AdminNotifier", "send_service_create_email", "deliver_now", gid://ruby-getting-started/Service/3
+[ActiveJob]   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "delayed_jobs" ("queue", "handler", "run_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["queue", "mailers"], ["handler", "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n  job_class: ActionMailer::DeliveryJob\n  job_id: 7fd20fbf-4bda-46a4-9cbe-c5dce7863584\n  queue_name: mailers\n  arguments:\n  - AdminNotifier\n  - send_service_create_email\n  - deliver_now\n  - _aj_globalid: gid://ruby-getting-started/Service/3\n"], ["run_at", "2016-06-19 18:54:28.182471"], ["created_at", "2016-06-19 18:54:28.182581"], ["updated_at", "2016-06-19 18:54:28.182581"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mSQL (4.5ms)[0m  [1mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 3]]

@@ -24,4 +24,17 @@ class Service < ActiveRecord::Base
 
   delegate :state, :state_id, to: :city
 
+  before_save :default_values
+  
+  private
+
+  def default_values
+    self.sales_counter ||= 0
+    self.aproved ||= false
+    self.deleted ||= false
+    self.collective ||= self.max_clients > 1 ? true : false
+    self.remaining_slots ||= self.max_clients if self.event 
+  end
+
+
 end
