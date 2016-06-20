@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :appointments, except: [:new, :edit]
     resources :acquisitions, except: [:new, :edit]
     resources :doubts, only: [:create]
+    resources :service_changes, only: [:create]
     resources :sessions, except: [:index, :update, :new, :show, :edit]
 
   end

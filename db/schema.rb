@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619210507) do
+ActiveRecord::Schema.define(version: 20160620012909) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(version: 20160619210507) do
     t.boolean "active"
   end
 
+  create_table "service_changes", force: :cascade do |t|
+    t.text    "message"
+    t.integer "service_id"
+    t.text    "commentary"
+    t.boolean "approved"
+  end
+
   create_table "service_pictures", force: :cascade do |t|
     t.string  "public_id"
     t.string  "description"
@@ -141,13 +148,6 @@ ActiveRecord::Schema.define(version: 20160619210507) do
     t.string  "acronym"
     t.integer "country_id"
     t.boolean "active"
-  end
-
-  create_table "table_edit_services", force: :cascade do |t|
-    t.text    "message"
-    t.integer "service_id"
-    t.text    "commentary"
-    t.boolean "approved"
   end
 
   create_table "users", force: :cascade do |t|
