@@ -55,8 +55,8 @@ class AdminNotifier < ApplicationMailer
 	    :subject => 'Solicitação de Edicão de Atividade' )
   	end
 
-  	def send_doubts_email(doubts)
-	    @doubts = doubts
+  	def send_doubt_email(doubt)
+	    @doubt = doubt
 	    mail( :to => 'meajuda@triskele.me',
 	    :subject => 'Nova Dúvida' )
   	end
