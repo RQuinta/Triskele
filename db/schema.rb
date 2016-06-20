@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619210507) do
+ActiveRecord::Schema.define(version: 20160620032501) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -73,6 +73,14 @@ ActiveRecord::Schema.define(version: 20160619210507) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
+  create_table "languages_professionals", id: false, force: :cascade do |t|
+    t.integer "language_id",     null: false
+    t.integer "professional_id", null: false
+  end
+
+  add_index "languages_professionals", ["language_id", "professional_id"], name: "laguages_professionals_on_language_id_and_professional_id"
+  add_index "languages_professionals", ["professional_id", "language_id"], name: "laguages_professionals_on_professional_id_and_language_id"
 
   create_table "professionals", force: :cascade do |t|
     t.integer "user_id"
@@ -148,6 +156,13 @@ ActiveRecord::Schema.define(version: 20160619210507) do
     t.integer "service_id"
     t.text    "commentary"
     t.boolean "approved"
+  end
+
+  create_table "table_languages", force: :cascade do |t|
+    t.string "code"
+    t.string "flag"
+    t.string "translation"
+    t.string "title"
   end
 
   create_table "users", force: :cascade do |t|
