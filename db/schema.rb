@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621021541) do
+ActiveRecord::Schema.define(version: 20160621025634) do
 
   create_table "acquisitions", force: :cascade do |t|
     t.integer "service_id"
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(version: 20160621021541) do
     t.boolean "air"
     t.boolean "land"
     t.boolean "need_documentation"
+    t.boolean "active"
   end
 
   create_table "states", force: :cascade do |t|
