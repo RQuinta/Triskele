@@ -13952,3 +13952,599 @@ Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.3ms)
 2016-06-20T22:27:05-0300: [Worker(host:arenari pid:18726)] Exiting...
   [1m[35mSQL (0.4ms)[0m  UPDATE "delayed_jobs" SET "locked_by" = NULL, "locked_at" = NULL WHERE "delayed_jobs"."locked_by" = ?  [["locked_by", "host:arenari pid:18726"]]
   [1m[36mService Load (1.3ms)[0m  [1mSELECT "services".* FROM "services"[0m
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 22:54:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 112ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-20 22:54:43 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."deleted" = 'f'[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 6]]
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/cities.json" for 127.0.0.1 at 2016-06-20 22:54:43 -0300
+Processing by Api::CitiesController#index as JSON
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/sports.json" for 127.0.0.1 at 2016-06-20 22:54:43 -0300
+Processing by Api::SportsController#index as JSON
+  [1m[36mSport Load (0.2ms)[0m  [1mSELECT "sports".* FROM "sports"[0m
+Completed 200 OK in 18ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/services/6.json" for 127.0.0.1 at 2016-06-20 22:54:49 -0300
+Processing by Api::ServicesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[35mService Load (0.5ms)[0m  SELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSport Load (0.3ms)[0m  SELECT "sports".* FROM "sports" INNER JOIN "services_sports" ON "sports"."id" = "services_sports"."sport_id" WHERE "services_sports"."service_id" = ?  [["service_id", 6]]
+  [1m[36mAcquisition Load (0.2ms)[0m  [1mSELECT "acquisitions".* FROM "acquisitions" WHERE "acquisitions"."service_id" = ?[0m  [["service_id", 6]]
+  [1m[35mAdditional Load (0.2ms)[0m  SELECT "additionals".* FROM "additionals" WHERE "additionals"."service_id" = ?  [["service_id", 6]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 6]]
+Completed 200 OK in 43ms (Views: 0.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 22:55:18 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 22:59:53 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:00:00 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:00:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 103ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:01:04 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:01:23 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:03:25 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:03:54 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:05:21 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.6ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:05:46 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.6ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:06:38 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:07:06 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:07:21 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:08:00 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:08:04 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:08:24 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:08:46 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:09:58 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:10:36 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:10:48 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:10:55 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.4ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:11:00 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.5ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:11:02 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 23ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:11:14 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.6ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:11:23 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.6ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:11:58 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:13:37 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:13:43 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.4ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:14:59 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddImagesToUser (20160621021541)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "background_image" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160621021541"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='laguages_professionals_on_professional_id_and_language_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='laguages_professionals_on_professional_id_and_language_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:19:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.3ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 105ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:20:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.6ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 127ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:21:36 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:21:41 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:22:51 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.3ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 31ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:23:20 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:23:27 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'  [["professional_id", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)[0m
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/users/1.json" for 127.0.0.1 at 2016-06-20 23:24:00 -0300
+Processing by Api::UsersController#update as JSON
+  Parameters: {"id"=>"1", "user"=>{"id"=>1, "name"=>"Raphael Quintanilha", "email"=>"rqs111193@gmail.com", "password_digest"=>"[FILTERED]", "token"=>"REUKe5Cb3HwupbpM4BTQqgT1", "image"=>"varal6mbycad8idixjgi", "professional"=>{"id"=>1, "user_id"=>1, "phone"=>"21986455135", "doc_ident"=>"15184092706", "cpf"=>true, "passport"=>false, "active"=>true}}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameters: id, password_digest, token, professional
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'rqs111193@gmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "image" = ? WHERE "users"."id" = ?[0m  [["image", "varal6mbycad8idixjgi"], ["id", 1]]
+  [1m[35m (3.4ms)[0m  commit transaction
+Completed 204 No Content in 61ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:25:04 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (2.6ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-20 23:25:20 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services" WHERE "services"."deleted" = 'f'
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-20 23:25:23 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[36mService Load (0.5ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."deleted" = 'f'[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 2]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mServicePicture Load (0.2ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 6]]
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/sessions.json" for 127.0.0.1 at 2016-06-20 23:25:29 -0300
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"session"=>{"email"=>"rqs111193@gmail.com", "social_login"=>true}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "rqs111193@gmail.com"]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1mSELECT  "professionals".* FROM "professionals" WHERE "professionals"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/services.json?without_deleted=true" for 127.0.0.1 at 2016-06-20 23:25:30 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"without_deleted"=>"true"}
+  [1m[35mService Load (0.6ms)[0m  SELECT "services".* FROM "services" WHERE "services"."deleted" = 'f'
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.1ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mServicePicture Load (0.6ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 6]]
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/services.json?by_professional=1&with_city=true&without_deleted=true" for 127.0.0.1 at 2016-06-20 23:25:33 -0300
+Processing by Api::ServicesController#index as JSON
+  Parameters: {"by_professional"=>"1", "with_city"=>"true", "without_deleted"=>"true"}
+  [1m[36mService Load (1.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."professional_id" = ? AND "services"."deleted" = 'f'[0m  [["professional_id", 1]]
+  [1m[35mCity Load (0.8ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" IN (4, 2)
+  [1m[36mServicePicture Load (0.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 1]]
+  [1m[35mServicePicture Load (0.2ms)[0m  SELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?  [["service_id", 2]]
+  [1m[36mServicePicture Load (1.1ms)[0m  [1mSELECT "service_pictures".* FROM "service_pictures" WHERE "service_pictures"."service_id" = ?[0m  [["service_id", 4]]
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1

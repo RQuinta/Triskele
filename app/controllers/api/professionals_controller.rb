@@ -31,7 +31,7 @@ class Api::ProfessionalController < ApplicationController
   private
 
   def professional_params
-    params.require(:professional).permit([:name])
+    params.require(:professional).permit([:name, :cpf, :passport, :doc_ident, :active,  languages_ids: [] ])
   end
 
   def set_location
