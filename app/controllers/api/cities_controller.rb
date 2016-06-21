@@ -5,6 +5,8 @@ class Api::CitiesController < ApplicationController
   has_scope :by_state
   has_scope :by_name
 
+  has_scope :only_active, type: :boolean
+
   def index
     respond_with apply_scopes(City).all
   end

@@ -4,6 +4,7 @@ class Api::SportsController < ApplicationController
 
   has_scope :by_name
   has_scope :with_services, :type => :boolean
+  has_scope :only_active, type: :boolean
 
   def index
     respond_with apply_scopes(Sport).all
