@@ -15,6 +15,8 @@ class Service < ActiveRecord::Base
   scope :by_professional, -> (professional) { where( professional_id: professional) }
   scope :by_state, -> (state) { where(state_id: state) }
   scope :without_deleted, -> { where(deleted: [false])}
+  scope :only_aproved, -> { where(aproved: [true])}
+  scope :only_active, -> { where(active: [true])}
 
   scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
 
@@ -30,7 +32,8 @@ class Service < ActiveRecord::Base
 
   def default_values
     self.sales_counter ||= 0
-    self.aproved ||= false
+    self.aproved ||= true
+    self.active ||= true
     self.deleted ||= false
     self.rating ||= 0
     self.collective ||= self.max_clients > 1 ? true : false

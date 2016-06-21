@@ -7,6 +7,8 @@ class Sport < ActiveRecord::Base
   scope :by_name, -> (searchText) do
     where("name LIKE '#{searchText}%'").limit(10)
   end
+
+   scope :only_active, -> { where(active: [true])}
   
   validates :name, presence: true, uniqueness: true
 

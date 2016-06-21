@@ -6,8 +6,9 @@ class Api::ServicesController < ApplicationController
   has_scope :by_sport
   has_scope :by_professional
   has_scope :by_city
-  has_scope :with_city, type: :boolean
   has_scope :without_deleted, type: :boolean
+  has_scope :only_aproved, type: :boolean
+  has_scope :only_active, type: :boolean
 
   def index
     services = apply_scopes(Service).all

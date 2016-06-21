@@ -12,7 +12,7 @@ class ServiceRatingUpdater
   private
 
   def total_rating_acquisitions_calculator(acquisitions)
-    acquisitions.inject(0) {|acc,acquisition| acc + acquisition.rating}
+    acquisitions.map(&:rating).compact!.inject(0) {|acc,rating| acc + rating }
   end
 
   def average_rating_acquisitions_calculator(acquisitions)
