@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20160621043045) do
     t.boolean "air"
     t.boolean "land"
     t.boolean "need_documentation"
+    t.boolean "active"
   end
 
   create_table "states", force: :cascade do |t|
