@@ -21,5 +21,11 @@ class UserNotifier < ApplicationMailer
 	    :subject => 'Retorno sobre o seu pedido de Pré-Agendamento' )
   	end
 
+    def send_forgot_password_email(user)
+
+      mail( :to => user.email,
+      :subject => 'Recuperar senha' )
+    end
+
 
 end

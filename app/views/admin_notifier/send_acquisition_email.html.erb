@@ -5,31 +5,35 @@
 	<body>
 		<h1>Nova Compra</h1>
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
-		<p><a href="<%= @base_url %>profile/<%= @user.id %>"><%= @user.name %></a> acabou de comprar a atividade:</p>
-		<p><a href="<%= @base_url %>aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="/profile/<%= @professional.id %>"><%= @professional.user.name %></a>.</p>
+		<p><a href="http://development.triskele.me:3000/profile/<%= @user.id %>"><%= @user.name %></a> acabou de comprar a atividade:</p>
+		<p><a href="http://development.triskele.me:3000/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="http://development.triskele.me:3000/profile/<%= @professional.id %>"><%= @professional.user.name %></a>.</p>
 		<table style="width:100%">
-			<tr>
-				<td><%= @service.name %></td>
-				<td>R$ <%= @acquisition.base_price %></td> 
-			</tr>
-			<% if @acquisition.additional %>
-				<tr>
-					<td><%= @acquisition.additional.description %></td>
-					<td>R$ <%= @acquisition.additional.excess %></td> 
-				</tr>
-			<% end %>
-			<tr>
-				<td>Nº Pessoas</td>
-				<td><%= @acquisition.slots %></td> 
-			</tr>
-			<tr>
-				<td>Total</td>
-				<% if @acquisition.additional %>
-					<td><%= ( @acquisition.additional.excess + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
-				<% else %>
-					<td><%= @acquisition.base_price * @acquisition.slots.to_i %></td>
-				<% end %>
-			</tr>
-		</table>
+					<tr>
+						<td style="text-align:left">Atividade:</td>
+						<td style="text-align:left"><%= @service.name %></td>
+						<td style="text-align:right">R$ <%= @acquisition.base_price %></td> 
+					</tr>
+					<% if @acquisition.additional %>
+						<tr>
+							<td style="text-align:left">Adicional:</td>
+							<td style="text-align:left"><%= @acquisition.additional.description %></td>
+							<td style="text-align:right">R$ <%= @acquisition.additional.excess %></td> 
+						</tr>
+					<% end %>
+					<tr>
+						<td style="text-align:left">Nº Pessoas</td>
+						<td></td>
+						<td style="text-align:right"><%= @acquisition.slots %></td> 
+					</tr>
+					<tr>
+						<td style="text-align:left">Total</td>
+						<td></td>
+						<% if @acquisition.additional %>
+							<td style="text-align:right">R$ <%= ( @acquisition.additional.excess.to_i + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
+						<% else %>
+							<td style="text-align:right">R$ <%= @acquisition.base_price.to_i * @acquisition.slots.to_i %></td>
+						<% end %>
+					</tr>
+				</table>
 	</body>
 </html>
