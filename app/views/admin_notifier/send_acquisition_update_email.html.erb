@@ -7,6 +7,6 @@
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
 		<p><a href="http://development.triskele.me:3000/profile/<%= @user.id %>"><%= @user.name %></a> acabou de comentar a atividade: <a href="http://development.triskele.me:3000/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="http://development.triskele.me:3000/profile/<%= @professional.id %>"><%= @professional.user.name %></a>.</p>
 		<p>Comentário:</p>
-		<p><%= @acquisition.commentary</p>
+		<p><%= @acquisition.commentary %></p>
 	</body>
 </html>

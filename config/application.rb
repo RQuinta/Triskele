@@ -22,7 +22,7 @@ module RubyGettingStarted
     end
 
     config.active_job.queue_adapter = :delayed_job
-    config.active_record.observers = :acquisition_observer, :user_observer, :professional_observer, :service_observer, :appointment_observer
+    config.active_record.observers = :acquisition_observer, :user_observer, :professional_observer, :service_observer, :appointment_observer, :service_changes_observer
     
   end
 end
