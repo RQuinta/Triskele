@@ -11,26 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621043045) do
+ActiveRecord::Schema.define(version: 20160624004815) do
 
   create_table "acquisitions", force: :cascade do |t|
-    t.integer "service_id"
-    t.integer "user_id"
-    t.integer "rating"
-    t.text    "commentary"
-    t.string  "token"
-    t.float   "base_price"
-    t.integer "additional_id"
-    t.integer "slots"
-    t.string  "payment_token"
-    t.string  "payment_method"
+    t.integer  "service_id"
+    t.integer  "user_id"
+    t.integer  "rating"
+    t.text     "commentary"
+    t.string   "token"
+    t.float    "base_price"
+    t.integer  "additional_id"
+    t.integer  "slots"
+    t.string   "payment_token"
+    t.string   "payment_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "additionals", force: :cascade do |t|
-    t.string  "name"
-    t.string  "description"
-    t.integer "excess"
-    t.integer "service_id"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "excess"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "appointments", force: :cascade do |t|
@@ -44,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160621043045) do
     t.string   "token"
     t.float    "base_price"
     t.integer  "additional_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -83,24 +89,30 @@ ActiveRecord::Schema.define(version: 20160621043045) do
   add_index "languages_professionals", ["professional_id", "language_id"], name: "laguages_professionals_on_professional_id_and_language_id"
 
   create_table "professionals", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "doc_ident"
-    t.boolean "cpf"
-    t.boolean "passport"
-    t.boolean "active"
+    t.integer  "user_id"
+    t.string   "doc_ident"
+    t.boolean  "cpf"
+    t.boolean  "passport"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "service_changes", force: :cascade do |t|
-    t.text    "message"
-    t.integer "service_id"
-    t.text    "commentary"
-    t.boolean "approved"
+    t.text     "message"
+    t.integer  "service_id"
+    t.text     "commentary"
+    t.boolean  "approved"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "service_pictures", force: :cascade do |t|
-    t.string  "public_id"
-    t.string  "description"
-    t.integer "service_id"
+    t.string   "public_id"
+    t.string   "description"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "services", force: :cascade do |t|
@@ -134,6 +146,8 @@ ActiveRecord::Schema.define(version: 20160621043045) do
     t.integer  "remaining_slots"
     t.integer  "sales_counter"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "services_sports", id: false, force: :cascade do |t|
@@ -168,14 +182,16 @@ ActiveRecord::Schema.define(version: 20160621043045) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "token"
-    t.string "image"
-    t.text   "about"
-    t.string "phone"
-    t.string "background_image"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "token"
+    t.string   "image"
+    t.text     "about"
+    t.string   "phone"
+    t.string   "background_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
