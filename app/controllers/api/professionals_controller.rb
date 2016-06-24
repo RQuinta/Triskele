@@ -17,7 +17,7 @@ class Api::ProfessionalsController < ApplicationController
   def show
     respond_to do |format|
       format.json do 
-        render :json => @professional.to_json(:include => {:services => { :include => :sports }, :acquisitions => {:include => :user, :include => :service} })
+        render :json => @professional.to_json(:include => {:services => { :include => :sports }, :acquisitions => {:include => [:additional, :service, :user]} })
       end
     end
   end
