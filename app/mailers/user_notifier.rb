@@ -22,9 +22,9 @@ class UserNotifier < ApplicationMailer
   	end
 
     def send_forgot_password_email(user)
-
-      mail( :to => user.email,
-      :subject => 'Recuperar senha' )
+    	@user = user
+      	mail( :to => user.email,
+      	:subject => 'Recuperar senha' )
     end
 
 
