@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
 
-  before_action :set_user , only:[:update, :show, :destroy]
+  before_action :set_user_by_id, only:[:update, :show]
+  before_action :set_user_by_email, only:[:forget_password]
 
   def create
     @user = User.create user_params
@@ -15,13 +16,17 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def update
-    @user.update user_params
-    respond_with :api, @user
+  def forget_password
+    if @user
+      UserNotifier.send_forgot_password_email(@user).deliver_later
+      render json: {}, status: 200     
+    else
+      render json: { errors: { email: 'email not found' } }, status: 404      
+    end  
   end
 
-  def destroy
-    @user.destroy
+  def update
+    @user.update user_params
     respond_with :api, @user
   end
 
@@ -31,8 +36,12 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :phone, :image, :about, :background_image)
   end
 
-  def set_user
+  def set_user_by_id
     @user = User.find params[:id]
+  end
+
+  def set_user_by_email
+    @user = User.find_by(email: params[:email])
   end
 
 end

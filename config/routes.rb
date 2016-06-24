@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json}, constraints: {format: 'json'} do
 
-    resources :users, except: [:new, :edit]
+    resources :users, only: [:create, :update, :show]
     resources :professionals, except: [:new, :edit]
     resources :services, except: [:new, :edit]
     resources :sports, except: [:new, :edit]
@@ -15,7 +15,12 @@ Rails.application.routes.draw do
     resources :doubts, only: [:create]
     resources :service_changes, only: [:create]
     resources :sessions, except: [:index, :update, :new, :show, :edit]
+    
+    post '/users/forget_password', to: 'users#forget_password'
 
+    
   end
+
+
 
 end
