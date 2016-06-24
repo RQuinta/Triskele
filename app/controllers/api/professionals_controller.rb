@@ -1,4 +1,4 @@
-class Api::ProfessionalController < ApplicationController
+class Api::ProfessionalsController < ApplicationController
 
   before_action :set_professional , only:[:show, :update, :destroy]
 
@@ -15,7 +15,11 @@ class Api::ProfessionalController < ApplicationController
   end
 
   def show
-    respond_with :api, @professional
+    respond_to do |format|
+      format.json do 
+        render :json => @professional.to_json(:include => {:services => { :include => :sports }, :acquisitions => {:include => :user, :include => :service} })
+      end
+    end
   end
 
   def update
@@ -34,8 +38,8 @@ class Api::ProfessionalController < ApplicationController
     params.require(:professional).permit([:name, :cpf, :passport, :doc_ident, :active,  languages_ids: [] ])
   end
 
-  def set_location
-    @professional = Location.find params[:id]
+  def set_professional
+    @professional = Professional.find params[:id]
   end
 
 end
