@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   before_action :set_user_by_id, only:[:update, :show]
   before_action :set_user_by_email, only:[:forget_password]
+  before_action :set_user_by_token, only:[:show_by_token]
 
   def create
     @user = User.create user_params
@@ -9,6 +10,14 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    if @user
+      render :json => @user.to_json(:except => [:password_digest, :token], :include => [:professional])
+    else
+      render json: { error: 'User does not exist' }, status: 404      
+    end
+  end
+
+  def show_by_token
     if @user
       render :json => @user.to_json(:except => [:password_digest, :token], :include => [:professional])
     else
@@ -42,6 +51,10 @@ class Api::UsersController < ApplicationController
 
   def set_user_by_email
     @user = User.find_by(email: params[:email])
+  end
+
+  def set_user_by_token
+    @user = User.find_by(token: params[:token])
   end
 
 end

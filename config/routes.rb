@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :sessions, except: [:index, :update, :new, :show, :edit]
     
     post '/users/forget_password', to: 'users#forget_password'
-
+    get '/users/show_by_token/:token', to: 'users#show_by_token'
     
   end
 
