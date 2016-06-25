@@ -20,6 +20,7 @@ class Api::ServicesController < ApplicationController
   end
 
   def create
+    binding.pry
     s_params = service_params 
     additionals = s_params.delete(:additionals)
     pictures = s_params.delete(:service_pictures_attributes)
@@ -29,7 +30,7 @@ class Api::ServicesController < ApplicationController
       picture.service_id = @service.id
       picture.save
     end
-    additionals.each do |additional|
+    additionals.to_a.each do |additional|
       additional = Additional.new additional
       additional.service_id = @service.id
       additional.save
