@@ -5,7 +5,8 @@ class Api::ServicesController < ApplicationController
 
   has_scope :by_sport
   has_scope :by_professional
-  has_scope :by_city
+  has_scope :by_city, :type => :array
+  has_scope :by_sport, :type => :array
   has_scope :without_deleted, type: :boolean
   has_scope :only_aproved, type: :boolean
   has_scope :only_active, type: :boolean

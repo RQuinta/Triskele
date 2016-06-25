@@ -11,15 +11,13 @@ class Service < ActiveRecord::Base
   has_many :users, through: :acquisitions
 
   scope :by_name, -> (busca) { where("name LIKE '#{busca}%'").limit(6) } 
-  scope :by_city, -> (city) { where(city_id: city) }
+  scope :by_city, -> (cities) { where(city_id: cities) }
   scope :by_professional, -> (professional) { where( professional_id: professional) }
   scope :by_state, -> (state) { where(state_id: state) }
   scope :without_deleted, -> { where(deleted: [false])}
   scope :only_aproved, -> { where(aproved: [true])}
   scope :only_active, -> { where(active: [true])}
-
-  scope :by_sport, -> (sport) { joins(:sports).where('sports.id = ?', sport) }
-
+  scope :by_sport, -> (sports) { joins(:sports).where(sports: { id: sports })}
   scope :with_city, -> { includes(:city) }
   
   validates :name, presence: true
