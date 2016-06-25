@@ -20,7 +20,6 @@ class Api::ServicesController < ApplicationController
   end
 
   def create
-    binding.pry
     s_params = service_params 
     additionals = s_params.delete(:additionals)
     pictures = s_params.delete(:service_pictures_attributes)
