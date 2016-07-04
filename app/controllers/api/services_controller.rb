@@ -3,9 +3,9 @@ class Api::ServicesController < ApplicationController
   before_filter :authenticate, only: [:create, :update, :destroy]
   before_action :set_service , only:[:show, :update, :destroy]
 
-  has_scope :by_sport
   has_scope :by_professional
   has_scope :by_city, :type => :array
+  has_scope :by_sport, :type => :array
   has_scope :without_deleted, type: :boolean
   has_scope :only_aproved, type: :boolean
   has_scope :only_active, type: :boolean
