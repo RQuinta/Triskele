@@ -5,7 +5,7 @@ class Api::ServicesController < ApplicationController
 
   has_scope :by_sport
   has_scope :by_professional
-  has_scope :by_city
+  has_scope :by_city, :type => :array
   has_scope :without_deleted, type: :boolean
   has_scope :only_aproved, type: :boolean
   has_scope :only_active, type: :boolean
@@ -40,7 +40,7 @@ class Api::ServicesController < ApplicationController
   def show
     respond_to do |format|
       format.json do 
-        render :json => @service.to_json(:include => {:city => {}, :professional => { :include => :languages}, :sports => {}, :acquisitions => {:include => :user}, :additionals => {} , :service_pictures => {} } )
+        render :json => @service.to_json(:include => {:city => {}, :professional => { :include => [:languages, :user]}, :sports => {}, :acquisitions => {:include => :user}, :additionals => {} , :service_pictures => {} } )
       end
     end
   end
@@ -62,7 +62,7 @@ class Api::ServicesController < ApplicationController
     params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
       :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
       :adrenaline, :image, :restrictions, :short_description, :longitude,
-      :latitude, :city_id, :professional_id, :required_experience, :event, service_pictures_attributes: [:public_id], additionals: [:description,:excess],  sport_ids: [] ])
+      :latitude, :city_id, :professional_id, :required_experience, :event, service_pictures_attributes: [:public_id], additionals: [:description,:excess], sport_ids: [], language_ids: [] ])
   end
   
   def set_service
