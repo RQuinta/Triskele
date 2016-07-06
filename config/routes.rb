@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :services, except: [:new, :edit]
     resources :sports, except: [:new, :edit]
     resources :cities, except: [:new, :edit]
+    resources :languages, except: [:new, :edit]
     resources :countries, except: [:new, :edit]
     resources :states, except: [:new, :edit]
     resources :countries, except: [:new, :edit]
