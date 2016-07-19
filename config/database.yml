@@ -10,12 +10,10 @@ development:
   pool: 5
   timeout: 5000
 
-
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: nxnhawbncijryn
+  database: ruby-getting-started_production
   username: ruby-getting-started
   password: <%= ENV['RUBY-GETTING-STARTED_DATABASE_PASSWORD'] %>
-
