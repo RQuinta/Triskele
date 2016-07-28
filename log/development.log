@@ -1,0 +1,572 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-18 22:08:03 -0300
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.3) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.3) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSport (20160207131833)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "water" boolean, "air" boolean, "land" boolean, "need_documentation" boolean) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207131833"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+Migrating to CreateCountry (20160207132059)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "active" boolean) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132059"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Migrating to CreateState (20160207132232)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "acronym" varchar, "country_id" integer, "active" boolean) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132232"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Migrating to CreateCity (20160207132340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state_id" integer, "active" boolean) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132340"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to CreateService (20160207132710)
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "min_clients" integer, "max_clients" integer, "collective" boolean, "rating" integer, "city_id" integer, "image" varchar, "adrenaline" integer, "short_description" text, "how_to_get" text, "place" text, "description" text, "duration" text, "included" text, "not_included" text, "restrictions" text, "bring" text, "physical_effort" integer, "aproved" boolean, "professional_id" integer, "longitude" varchar, "latitude" varchar) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207132710"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+Migrating to CreateProfessional (20160207133937)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "professionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "phone" varchar, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207133937"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Migrating to CreateDelayedJobs (20160207134704)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207134704"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUser (20160207135557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "token" varchar, "image" varchar) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160207135557"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableSportService (20160207200321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "services_sports" ("sport_id" integer NOT NULL, "service_id" integer NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_services_sports_on_sport_id_and_service_id" ON "services_sports" ("sport_id", "service_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_services_sports_on_service_id_and_sport_id" ON "services_sports" ("service_id", "sport_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160207200321"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateServicePicture (20160208184817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "service_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "public_id" varchar, "description" varchar, "service_id" integer) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160208184817"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to AddDateTimeInService (20160208223207)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "services" ADD "daytime" datetime
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "services" ADD "event" boolean[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208223207"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAdditional (20160208230227)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "additionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "excess" integer, "service_id" integer) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160208230227"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAppointment (20160209003748)
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "doubt_answer" text, "doubt" text, "daytime" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209003748"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAcquisition (20160209004514)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160209004514"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddRequiredExperienceToService (20160601020021)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "services" ADD "required_experience" text[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160601020021"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeletedToService (20160602033805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "services" ADD "deleted" boolean[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160602033805"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToAcquisition (20160604072644)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "acquisitions" ADD "commentary" text[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604072644"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddAnotherFieldsToAcquition (20160604222321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "acquisitions" ADD "token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "base_price" float
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "acquisitions" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160604222321"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsOnAcquisition (20160611023425)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "acquisitions" ADD "slots" integer[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611023425"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddSlotsToAppointments (20160611041852)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "appointments" ADD "slots" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611041852"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddRemainingSlotsToService (20160611180702)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "services" ADD "remaining_slots" integer[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611180702"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddTokenAndPaymentMethodToAcquision (20160611194737)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "acquisitions" ADD "payment_method_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "acquisitions" ADD "payment_method" varchar
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160611194737"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+Migrating to AlterColumnPaymentMethodTokenOnAcquisition (20160611195950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "aacquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acquisitions"[0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "acquisitions"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "acquisitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_id" integer, "user_id" integer, "rating" integer, "commentary" text, "token" varchar, "base_price" float, "additional_id" integer, "slots" integer, "payment_token" varchar, "payment_method" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aacquisitions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aacquisitions"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611195950"]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdditionalIdToAppointment (20160611215721)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "appointments" ADD "additional_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160611215721"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsOnAppointment (20160618173222)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "appointments" ADD "token" varchar[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "appointments" ADD "base_price" float
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "appointments" ADD "additional_price" integer[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160618173222"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddSalesCounterOnService (20160619184918)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "services" ADD "sales_counter" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160619184918"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddAboutAndPhoneToUser (20160619205345)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "users" ADD "about" text[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "phone" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160619205345"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to RemovePhoneFromProfessionals (20160619205751)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TEMPORARY TABLE "aprofessionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "phone" varchar, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "professionals"[0m
+  [1m[35m (0.8ms)[0m  DROP TABLE "professionals"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "professionals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "doc_ident" varchar, "cpf" boolean, "passport" boolean, "active" boolean) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aprofessionals"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aprofessionals"[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160619205751"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTableEditService (20160619210507)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "table_edit_services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message" text, "service_id" integer, "commentary" text, "approved" boolean) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160619210507"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Migrating to RenameTableEditServiceToEditService (20160620012909)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "table_edit_services" RENAME TO "service_changes"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620012909"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTableLanguages (20160620021714)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "table_languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "flag" varchar, "translation" varchar, "title" varchar) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620021714"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableLanguageProfessional (20160620022958)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "languages_professionals" ("language_id" integer NOT NULL, "professional_id" integer NOT NULL) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620022958"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddIndexToProfessionalsLanguages (20160620032501)
+  [1m[35m (2.8ms)[0m  CREATE  INDEX "laguages_professionals_on_language_id_and_professional_id" ON "languages_professionals" ("language_id", "professional_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+[0m
+  [1m[35m (3.9ms)[0m  CREATE  INDEX "laguages_professionals_on_professional_id_and_language_id" ON "languages_professionals" ("professional_id", "language_id")
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620032501"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddImagesToUser (20160621021541)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "background_image" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160621021541"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddActiveToSports (20160621025634)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "sports" ADD "active" boolean[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160621025634"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddActiveOnServices (20160621043045)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "services" ADD "active" boolean[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160621043045"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimestamp (20160624004815)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "acquisitions" ADD "created_at" datetime[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "acquisitions" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "created_at" datetime[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "professionals" ADD "created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "professionals" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "appointments" ADD "created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "appointments" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "services" ADD "created_at" datetime[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "services" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "service_changes" ADD "created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "service_changes" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "service_pictures" ADD "created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "service_pictures" ADD "updated_at" datetime
+DEPRECATION WARNING: `#add_timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from measure at /home/raphael/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "additionals" ADD "created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "additionals" ADD "updated_at" datetime
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160624004815"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to RenameTableTableLanguagesToLanguages (20160625040151)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "table_languages" RENAME TO "languages"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160625040151"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Migrating to RemoveTranslationAndFlagFromLanguages (20160625040708)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TEMPORARY TABLE "alanguages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "flag" varchar, "translation" varchar, "title" varchar) 
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "languages"[0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "languages"
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "flag" varchar, "title" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "alanguages"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "alanguages"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "alanguages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "flag" varchar, "title" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "languages"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "languages"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "title" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "alanguages"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "alanguages"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160625040708"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to AlterColumnTitleOnLanguages (20160625041008)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "alanguages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "name" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "languages"
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "languages"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "name" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "alanguages"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "alanguages"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160625041008"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='laguages_professionals_on_professional_id_and_language_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='laguages_professionals_on_professional_id_and_language_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='laguages_professionals_on_language_id_and_professional_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_service_id_and_sport_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_services_sports_on_sport_id_and_service_id' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-18 22:11:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2016-07-18 22:11:15 -0300
+
+ActionController::RoutingError (No route matches [GET] "/services"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.2ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.1ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.3ms)
+
+
+Started GET "/services.json" for 127.0.0.1 at 2016-07-18 22:11:21 -0300
+
+ActionController::RoutingError (No route matches [GET] "/services.json"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.6ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.0ms)
+
+
+Started GET "/api/services.json" for 127.0.0.1 at 2016-07-18 22:11:41 -0300
+Processing by Api::ServicesController#index as JSON
+  [1m[35mService Load (2.0ms)[0m  SELECT "services".* FROM "services"
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+2016-07-18T22:55:29-0300: [Worker(host:raphael-Z360-G-BG71P1 pid:2968)] Starting job worker
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (2.1ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:29.929503' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:29.929528') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:35.076999' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:35.077035') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:40.226658' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:40.226690') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:45.309910' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:45.310014') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:50.363619' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:50.363647') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:55:55.489177' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:55:55.489207') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:00.549346' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:00.549377') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:05.674846' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:05.674914') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:10.801101' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:10.801136') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:15.906157' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:15.906194') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:20.968366' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:20.968395') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:26.067912' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:26.067946') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:31.143341' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:31.143371') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:36.198822' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:36.198848') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:41.263330' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:41.263355') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:46.335510' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:46.335540') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:51.399478' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:51.399507') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:56:56.528075' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:56:56.528106') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:01.583732' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:01.583760') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:06.709752' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:06.709787') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:11.830875' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:11.830911') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:16.945560' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:16.945590') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:22.029631' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:22.029730') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (1.0ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:27.173340' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:27.173373') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:32.316671' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:32.316706') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:37.431687' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:37.431718') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:42.575633' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:42.575668') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:47.699130' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:47.699168') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:52.822655' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:52.822692') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:57:57.952578' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:57:57.952615') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:03.009389' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:03.009417') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:08.146994' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:08.147029') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:13.275009' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:13.275046') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:18.333207' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:18.333233') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:23.397030' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:23.397059') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:28.533161' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:28.533195') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:33.660856' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:33.660893') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:38.774352' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:38.774380') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:43.901262' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:43.901299') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:49.030368' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:49.030404') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:54.117582' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:54.117694') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:58:59.244747' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:58:59.244783') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:04.333072' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:04.333104') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:09.462642' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:09.462686') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:14.530760' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:14.530787') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:19.585694' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:19.585721') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:24.714407' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:24.714444') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:29.859554' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:29.859591') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:34.988355' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:34.988393') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:40.117109' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:40.117146') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:45.242776' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:45.242812') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:50.388319' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:50.388372') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 01:59:55.515317' AND (locked_at IS NULL OR locked_at < '2016-07-18 21:59:55.515353') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:00.645135' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:00.645170') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:05.743246' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:05.743277') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:10.838900' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:10.838931') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:16.012525' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:16.012556') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:21.131688' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:21.131720') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:26.262199' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:26.262236') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:31.392899' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:31.392937') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:36.540301' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:36.540336') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:41.668851' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:41.668888') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:46.798930' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:46.798966') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:51.858328' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:51.858365') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:00:56.939328' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:00:56.939362') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (1.3ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:02.053773' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:02.053805') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:07.182123' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:07.182153') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:12.270661' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:12.270690') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:17.398840' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:17.398877') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:22.527455' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:22.527490') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:27.650890' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:27.650926') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:32.779006' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:32.779042') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:37.907300' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:37.907336') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:43.037536' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:43.037572') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:48.156909' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:48.156945') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:53.270851' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:53.270884') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:01:58.400959' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:01:58.400992') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:03.473031' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:03.473060') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:08.617459' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:08.617495') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:13.751795' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:13.751834') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:18.887870' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:18.887911') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:23.955923' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:23.955953') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:29.027182' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:29.027214') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:34.085613' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:34.085641') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:39.140889' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:39.140915') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:44.193590' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:44.193615') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:49.258848' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:49.258876') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:54.363944' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:54.363975') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:02:59.443485' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:02:59.443514') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:04.581386' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:04.581423') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:09.701961' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:09.701991') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:14.840868' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:14.840906') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:19.913389' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:19.913416') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:24.998475' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:24.998503') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:30.119237' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:30.119316') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:35.216212' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:35.216239') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:40.363546' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:40.363581') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:45.506350' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:45.506380') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:50.586513' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:50.586541') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:03:55.646597' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:03:55.646627') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:00.709061' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:00.709091') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:05.781655' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:05.781686') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:10.844854' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:10.844883') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (1.0ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:15.913723' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:15.913756') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:20.976649' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:20.976677') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:26.103431' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:26.103479') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:31.168460' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:31.168490') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:36.323494' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:36.323530') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:41.388258' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:41.388285') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:46.515912' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:46.515949') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:51.629407' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:51.629441') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.8ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:04:56.759322' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:04:56.759359') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:05:01.838680' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:05:01.838711') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+  [1m[35mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  SELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:05:06.956051' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:05:06.956086') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1mSELECT  "delayed_jobs".* FROM "delayed_jobs" WHERE ((run_at <= '2016-07-19 02:05:12.090596' AND (locked_at IS NULL OR locked_at < '2016-07-18 22:05:12.090633') OR locked_by = 'host:raphael-Z360-G-BG71P1 pid:2968') AND failed_at IS NULL)  ORDER BY priority ASC, run_at ASC LIMIT 5[0m
+2016-07-18T23:05:13-0300: [Worker(host:raphael-Z360-G-BG71P1 pid:2968)] Exiting...
+  [1m[35mSQL (0.2ms)[0m  UPDATE "delayed_jobs" SET "locked_by" = NULL, "locked_at" = NULL WHERE "delayed_jobs"."locked_by" = ?  [["locked_by", "host:raphael-Z360-G-BG71P1 pid:2968"]]

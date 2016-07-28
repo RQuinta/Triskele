@@ -9,7 +9,9 @@ module BRPopulate
   end
 
   def self.populate
+
    country_obj = Country.new(:name => "Brasil", :acronym => "BR", :active => true)
+
    country_obj.save
    states.each do |state|
       state_obj = State.new(:acronym => state["acronym"], :name => state["name"], :active => false)
@@ -24,6 +26,7 @@ module BRPopulate
     end
    end
 end
+
 
 BRPopulate.populate
 
@@ -63,3 +66,5 @@ sport_list = [
 sport_list.each do |name, water, air, land, need_documentation, active|
   Sport.create( name: name, water: water, air: air, land: land, need_documentation: need_documentation, active: active )
 end
+
+
