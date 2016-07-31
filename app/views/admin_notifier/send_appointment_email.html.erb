@@ -6,32 +6,32 @@
 		<h1>Nova solicitação de pré-agendamento</h1>
 		<!-- tem que pegar o link do profile do profissional, serviço e usuário que comprou, mudar quando der build -->
 		<p><a href="http://development.triskele.me:3000/profile/<%= @user.id %>"><%= @user.name %></a> acabou de solicitar o pré-agendamento da atividade:</p>
-		<p><a href="http://development.triskele.me:3000/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="http://development.triskele.me:3000/profile/<%= @professional.id %>"><%= @professional.user.name %></a> no dia <%= @appointment.daytime.to_s(:day_at_hour) %></p>
+		<p><a href="http://development.triskele.me:3000/aventura/<%= @service.id %>"><%= @service.name %></a> de <a href="http://development.triskele.me:3000/profile/<%= @professional.user.id %>"><%= @professional.user.name %></a> no dia <%= @appointment.daytime.to_s(:day_at_hour) %></p>
 		<table style="width:100%">
 			<tr>
 				<td style="text-align:left">Atividade:</td>
 				<td style="text-align:left"><%= @service.name %></td>
-				<td style="text-align:right">R$ <%= @acquisition.base_price %></td> 
+				<td style="text-align:right">R$ <%= @appointment.base_price %></td> 
 			</tr>
-			<% if @acquisition.additional %>
+			<% if @appointment.additional %>
 				<tr>
 					<td style="text-align:left">Adicional:</td>
-					<td style="text-align:left"><%= @acquisition.additional.description %></td>
-					<td style="text-align:right">R$ <%= @acquisition.additional.excess %></td> 
+					<td style="text-align:left"><%= @appointment.additional.description %></td>
+					<td style="text-align:right">R$ <%= @appointment.additional.excess %></td> 
 				</tr>
 			<% end %>
 			<tr>
 				<td style="text-align:left">Nº Pessoas</td>
 				<td></td>
-				<td style="text-align:right"><%= @acquisition.slots %></td> 
+				<td style="text-align:right"><%= @appointment.slots %></td> 
 			</tr>
 			<tr>
 				<td style="text-align:left">Total</td>
 				<td></td>
-				<% if @acquisition.additional %>
-					<td style="text-align:right">R$ <%= ( @acquisition.additional.excess.to_i + @acquisition.base_price.to_i ) * @acquisition.slots.to_i %></td>
+				<% if @appointment.additional %>
+					<td style="text-align:right">R$ <%= ( @appointment.additional.excess.to_i + @appointment.base_price.to_i ) * @appointment.slots.to_i %></td>
 				<% else %>
-					<td style="text-align:right">R$ <%= @acquisition.base_price.to_i * @acquisition.slots.to_i %></td>
+					<td style="text-align:right">R$ <%= @appointment.base_price.to_i * @appointment.slots.to_i %></td>
 				<% end %>
 			</tr>
 		</table>

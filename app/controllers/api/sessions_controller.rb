@@ -6,14 +6,14 @@ class Api::SessionsController < ApplicationController
             if (session_params[:social_login])
                 respond_to do |format|
                     format.json do
-                        render :json => user.to_json(:include => [:professional] )
+                        render :json => user.to_json(:include => {:professional => { :include => [:languages]} } )
                     end
                 end
             else
                 if (user.authenticate(session_params[:password]))
                     respond_to do |format|
                         format.json do
-                            render :json => user.to_json(:include => [:professional] )
+                            render :json => user.to_json(:include => {:professional => { :include => [:languages]} } )
                         end
                     end
                 else

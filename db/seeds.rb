@@ -67,4 +67,19 @@ sport_list.each do |name, water, air, land, need_documentation, active|
   Sport.create( name: name, water: water, air: air, land: land, need_documentation: need_documentation, active: active )
 end
 
+language_list = [
+  [ "Português", "pt" ],
+  [ "Inglês", "en" ],
+  [ "Espanhol", "es" ],
+  [ "Francês", "fr" ],
+  [ "Alemão", "de" ],
+  [ "Italiano", "it" ],
+  [ "Japonês", "ja" ],
+  [ "Mandarim", "zh" ]
+]
+
+sport_list.each do | name, code|
+  Sport.create( name: name, code: code)
+end
+
 

@@ -10,6 +10,8 @@ class Service < ActiveRecord::Base
   has_many :acquisitions
   has_many :users, through: :acquisitions
 
+  default_scope { where(deleted: [false]) }
+
   scope :by_name, -> (busca) { where("name LIKE '#{busca}%'").limit(6) } 
   scope :by_city, -> (cities) { where(city_id: cities) }
   scope :by_professional, -> (professional) { where( professional_id: professional) }
@@ -24,7 +26,7 @@ class Service < ActiveRecord::Base
 
   delegate :state, :state_id, to: :city
 
-  before_save :default_values
+  before_create :default_values
   
   private
 

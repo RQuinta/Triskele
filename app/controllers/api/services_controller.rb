@@ -59,10 +59,10 @@ class Api::ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit([:name, :bring, :daytime, :description, :duration, :how_to_get, 
+    params.require(:service).permit([:name, :active, :bring, :daytime, :description, :duration, :how_to_get, 
       :included, :max_clients, :min_clients, :not_included, :physical_effort, :place, :price, :rating,
       :adrenaline, :image, :restrictions, :short_description, :longitude,
-      :latitude, :city_id, :professional_id, :required_experience, :event, service_pictures_attributes: [:public_id], additionals: [:description,:excess], sport_ids: [], language_ids: [] ])
+      :latitude, :city_id, :professional_id, :required_experience, :event, service_pictures_attributes: [:public_id], additionals: [:description,:excess], sport_ids: [] ])
   end
   
   def set_service

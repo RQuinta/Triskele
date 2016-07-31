@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
 
   def show
     if @user
-      render :json => @user.to_json(:except => [:password_digest, :token], :include => [:professional])
+      render :json => @user.to_json(:except => [:password_digest, :token], :include => {:professional => { :include => [:languages]} })
     else
       render json: { error: 'User does not exist' }, status: 404      
     end
@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
 
   def show_by_token
     if @user
-      render :json => @user.to_json(:except => [:password_digest, :token], :include => [:professional])
+      render :json => @user.to_json(:except => [:password_digest, :token], :include => {:professional => { :include => [:languages]} })
     else
       render json: { error: 'User does not exist' }, status: 404      
     end
